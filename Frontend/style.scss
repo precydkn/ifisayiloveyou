@@ -14,28 +14,14 @@ $blue3: #D3E0F8;
 $blue-player: #005395;
 $taupe: #C8BDB7;
 
+/*page scrollbar format*/
 html{
     scroll-behavior: smooth; /*smooth scroll movement when clicking anchors*/
     scroll-padding-top: 90px; /*prevents navbar from covering target section*/
 }
-/* Hide scrollbars for the whole page */
 html::-webkit-scrollbar {
     width: 0;
     height: 0;
-}
-
-html {
-    scrollbar-width: none; /* For Firefox */
-}
-
-/* Style the scrollbars specifically for the div */
-.vertical-scroll-container::-webkit-scrollbar {
-    height: 8px; /* Adjust scrollbar height */
-}
-
-.vertical-scroll-container::-webkit-scrollbar-thumb {
-    background: #005395; /* Adjust color */
-    border-radius: 4px;
 }
 
 body {
@@ -318,6 +304,15 @@ section {
                     border-radius: 60px 60px 0 0 ;*/
                 }
             }
+        }
+        
+        /*scrollbar format*/
+        .vertical-scroll-container::-webkit-scrollbar {
+            height: 8px; /* Adjust scrollbar height */
+        }
+        .vertical-scroll-container::-webkit-scrollbar-thumb {
+            background: #005395; /* Adjust color */
+            border-radius: 4px;
         }
         
         /*.carousel2 {
