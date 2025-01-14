@@ -1,0 +1,162 @@
+/*==========FONTS==========*/
+@import url('https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Dongle&family=Kirang+Haerang&family=Kosugi+Maru&family=Noto+Sans+Mono:wght@100..900&display=swap');
+
+$nav-header-font: 'Kirang Haerang';
+$nav-current-font: 'Black And White Picture';
+$text-font: 'Dongle';
+$span-font: 'Kosugi Maru';
+$quote-font: 'Noto Sans Mono';
+$nav-header-size: 50px;
+$blue-album: #299CF9;
+$blue1: #477AAE;
+$blue2: #8AB9CD;
+$blue3: #D3E0F8;
+$blue-player: #005395;
+$taupe: #C8BDB7;
+
+/*page scrollbar format*/
+html{
+    scroll-behavior: smooth; /*smooth scroll movement when clicking anchors*/
+    scroll-padding-top: 90px; /*prevents navbar from covering target section*/
+}
+html::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+body {
+    margin: 0;
+    font-family: $text-font;
+    background-color: $blue-album;
+    //transition: background-color 0.5s ease; // Smooth transition for background color
+    h1 {
+        font-family: $nav-header-font;
+        font-size: $nav-header-size;
+        font-weight: normal;
+        color: $blue3;
+        text-align: center;
+        -webkit-text-stroke-width: 1.7px;
+        -webkit-text-stroke-color: black;
+    }
+}
+
+header {
+    nav {
+        background-color: black;
+        font-family: $nav-header-font;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding-right: 20px;
+        box-sizing: border-box; /* ensures padding doesn’t affect width calculation */
+        backdrop-filter: blur(10px);
+        border-radius: 0 0 10px 10px;
+        border: 2px solid rgba(0,0,0,0.5);
+
+        //border: 1px dashed white; /*remove after*/
+        
+        .bnd-logo {
+            margin-right: auto;
+            //border: 1px dashed black; /*remove after*/
+            img {
+                height: 100px;
+            }
+        }
+        
+        .nav-btns {
+            margin-left: auto;
+            width: 1000px;
+            display: flex;
+            justify-content: space-between;
+            //border: 1px dashed black; /*remove after*/
+            a {
+                text-decoration: none;
+                font-size: $nav-header-size;
+                color: white;
+                -webkit-text-stroke-width: 1.7px;
+                -webkit-text-stroke-color: black;
+            }
+            #current, a:hover {
+                font-family: $nav-current-font;
+                color: $blue3;
+                -webkit-text-stroke-width: 1px;
+            }
+        }
+    }
+}
+
+section {
+    font-size: 30px;
+    padding: 50px;
+
+    p {
+        line-height: 1;
+    }
+
+    #Login {
+        display: flex;
+        justify-content: center;
+        
+        .log-container {
+            background-color: white;
+            padding: 30px 70px;
+            width: 800px;
+            text-align: center;
+            border-radius: 50px;
+        
+            input {
+                border: 1 solid #646464;
+                border-radius: 10px;
+                background-color: rgba(255,255,255,0);
+                font-size: 16px;
+                font-family: $text-font;
+                width: 80%;
+                height: 50px;
+                padding: 0 10px;
+                margin: 10px 0;
+            }
+            input:focus {
+                outline: none;
+            }
+            
+            a {
+                color: $blue2;
+                text-decoration: none;
+            }
+            a:hover {
+                color: $taupe;
+                transition: 0.2s;
+            }
+            
+            button {
+                font-family: $text-font;
+                font-size: medium;
+                padding: 10px 20px;
+                background-color: $blue1;
+                color: white;
+                border: none;
+            }
+            button:hover {
+                background-color: $blue2;
+                transition: 0.3s;
+                cursor: pointer;
+            }
+            
+            /*contact file*/
+            .name {
+                display: flex;
+                gap: 20px;
+            }
+            textarea {
+                width: 98%;
+                resize: vertical;
+                padding: 10px;
+                margin-top: 10px;
+                font-family: "Playfair Display", serif;
+            }
+            .send {
+                margin-top: 20px;
+            }
+        }
+    }
+}
