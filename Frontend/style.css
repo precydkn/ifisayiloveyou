@@ -1,29 +1,15 @@
 @charset "UTF-8";
 /*==========FONTS==========*/
 @import url("https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Dongle&family=Kirang+Haerang&family=Kosugi+Maru&family=Noto+Sans+Mono:wght@100..900&display=swap");
+/*page scrollbar format*/
 html {
   scroll-behavior: smooth; /*smooth scroll movement when clicking anchors*/
   scroll-padding-top: 90px; /*prevents navbar from covering target section*/
 }
 
-/* Hide scrollbars for the whole page */
 html::-webkit-scrollbar {
   width: 0;
   height: 0;
-}
-
-html {
-  scrollbar-width: none; /* For Firefox */
-}
-
-/* Style the scrollbars specifically for the div */
-.vertical-scroll-container::-webkit-scrollbar {
-  height: 8px; /* Adjust scrollbar height */
-}
-
-.vertical-scroll-container::-webkit-scrollbar-thumb {
-  background: #005395; /* Adjust color */
-  border-radius: 4px;
 }
 
 body {
@@ -164,6 +150,7 @@ section #Lyrics .bathtub-boy {
 section #Analysis {
   background-color: #C8BDB7;
   border: 1px solid #C8BDB7;
+  /*scrollbar format*/
   /*.carousel2 {
       position: relative;
       width: 100%;
@@ -322,6 +309,13 @@ section #Analysis .vertical-scroll-container .vs-slide p {
   transform: translateY(-90%);
   background-image: linear-gradient(rgba(255,255,255, 0.5), rgba(255,255,255,1));
   border-radius: 60px 60px 0 0 ;*/
+}
+section #Analysis .vertical-scroll-container::-webkit-scrollbar {
+  height: 8px; /* Adjust scrollbar height */
+}
+section #Analysis .vertical-scroll-container::-webkit-scrollbar-thumb {
+  background: #005395; /* Adjust color */
+  border-radius: 4px;
 }
 
 /*==========SCROLLBAR==========*/
