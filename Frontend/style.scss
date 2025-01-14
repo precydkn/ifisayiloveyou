@@ -1,0 +1,380 @@
+/*==========FONTS==========*/
+@import url('https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Dongle&family=Kirang+Haerang&family=Kosugi+Maru&family=Noto+Sans+Mono:wght@100..900&display=swap');
+
+$nav-header-font: 'Kirang Haerang';
+$nav-current-font: 'Black And White Picture';
+$text-font: 'Dongle';
+$span-font: 'Kosugi Maru';
+$quote-font: 'Noto Sans Mono';
+$nav-header-size: 50px;
+$blue-album: #299CF9;
+$blue1: #477AAE;
+$blue2: #8AB9CD;
+$blue3: #D3E0F8;
+$blue-player: #005395;
+$taupe: #C8BDB7;
+
+html{
+    scroll-behavior: smooth; /*smooth scroll movement when clicking anchors*/
+    scroll-padding-top: 90px; /*prevents navbar from covering target section*/
+}
+/* Hide scrollbars for the whole page */
+html::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+html {
+    scrollbar-width: none; /* For Firefox */
+}
+
+/* Style the scrollbars specifically for the div */
+.vertical-scroll-container::-webkit-scrollbar {
+    height: 8px; /* Adjust scrollbar height */
+}
+
+.vertical-scroll-container::-webkit-scrollbar-thumb {
+    background: #005395; /* Adjust color */
+    border-radius: 4px;
+}
+
+body {
+    margin: 0;
+    font-family: $text-font;
+    background-color: black;
+    //transition: background-color 0.5s ease; // Smooth transition for background color
+    h1 {
+        font-family: $nav-header-font;
+        font-size: $nav-header-size;
+        font-weight: normal;
+        color: $blue3;
+        text-align: center;
+        -webkit-text-stroke-width: 1.7px;
+        -webkit-text-stroke-color: black;
+    }
+}
+
+header {
+    height: 100vh; /*header height is the same as video*/
+    video {
+        /*opacity: 0.5;*/
+        position: absolute; /*put the nav on top of vid*/
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /*occupy the whole div*/
+    }
+    nav {
+        font-family: $nav-header-font;
+        position: fixed;
+        z-index: 10; /*put it on top of all elements*/
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding-right: 20px;
+        box-sizing: border-box; /* ensures padding doesn’t affect width calculation */
+        backdrop-filter: blur(10px);
+        border-radius: 0 0 10px 10px;
+        border: 2px solid rgba(0,0,0,0.5);
+
+        //border: 1px dashed white; /*remove after*/
+        
+        .bnd-logo {
+            margin-right: auto;
+            //border: 1px dashed black; /*remove after*/
+            img {
+                height: 100px;
+            }
+        }
+        
+        .nav-btns {
+            margin-left: auto;
+            width: 1000px;
+            display: flex;
+            justify-content: space-between;
+            //border: 1px dashed black; /*remove after*/
+            a {
+                text-decoration: none;
+                font-size: $nav-header-size;
+                color: white;
+                -webkit-text-stroke-width: 1.7px;
+                -webkit-text-stroke-color: black;
+            }
+            #current, a:hover {
+                font-family: $nav-current-font;
+                color: $blue3;
+                -webkit-text-stroke-width: 1px;
+            }
+        }
+    }
+}
+
+section {
+    font-size: 30px;
+    p {
+        line-height: 1;
+    }
+    .container {
+        max-width: 1400px;
+        margin-bottom: 50px;
+        display: flex;
+        justify-self: center;
+        flex-direction: column;
+        //border: 1px dashed white;
+    }
+
+    #About {
+        background-color: $blue-album;
+        border: 1px solid $blue-album;
+        .song {
+            display: grid;
+            grid-template-columns: auto 50%;
+            gap: 30px;
+            /*border: 1px dashed white; /*remove after*/
+
+            .embeded {
+                background-color: $blue-player;
+                border-radius: 10px;
+            }
+
+            iframe {
+                width: 100%;
+                height: 100%;
+                /*border: 1px dashed white; /*remove after*/
+            }
+        }
+    }
+    
+    #Lyrics {
+        background-color: black;
+        border: 1px solid black;
+        position: relative;
+        margin-top: 40px;
+
+        .lyrics-container {
+            background-color: $blue1;
+            border-radius: 20px;
+            padding: 80px 0;
+            margin: 0 50px 50px;
+            display: flex;
+            justify-content: center;
+            gap: 200px;
+
+            span {
+                font-family: $span-font;
+                font-size: 24px;
+            }
+            .lyrics-second {
+                margin-top: 300px;
+            }
+            .ily {
+                position: absolute;
+                top: 170px;
+                right: 200px;
+                height: 400px;
+                /*border: 1px solid white;*/
+            }
+            
+            .full-lyrics {
+                font-family: $text-font;
+                font-size: 40px;
+            }
+        }
+
+        .bathtub-boy {
+            position: absolute;
+            top: 1350px;
+            /*border: 1px solid white;*/
+        }
+    }
+    
+    #Analysis {
+        background-color: $taupe;
+        border: 1px solid $taupe;
+
+        .analysis-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            //border:1px dashed $blue-album;
+
+            .quote {
+                width: 550px;
+                justify-self: center;
+                margin: 70px 0;
+                font-family: $quote-font;
+                font-size: 26px;            
+                //border:1px dashed $blue3;
+            }
+
+        }
+
+        .carousel {
+            position: relative;
+            width: 100%;
+            height: 580px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        
+            .carousel-slides-container {
+                width: 100%;
+            }
+        
+            .carousel-slide {
+                position: relative;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+        
+                video {
+                    width: 100%;
+                    height: 580px;
+                    object-fit: cover;
+                    border-radius: 50px;
+                }
+        
+                p {
+                    position: absolute;
+                    bottom: 20px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    color: white;
+                    text-align: center;
+                    background-color: rgba(0, 0, 0, 0.5);
+                    padding: 10px 20px;
+                    border-radius: 10px;
+                }
+            }
+
+            .prev-btn-div,
+            .next-btn-div {
+                position: absolute;
+                bottom: 10px;
+                z-index: 10;
+        
+                //img 
+                button {
+                    width: 50px;
+                    height: 50px;
+                    background-color: rgba(255,255,255,0);
+                    border: 0;
+                    font-family: $nav-header-font;
+                    font-size: 50px;
+                    color: $blue2;
+
+                    &:active {
+                        color: white;
+                    }
+                }
+            }
+            .prev-btn-div {
+                left: 20px;
+            }
+            .next-btn-div {
+                right: 20px;
+            }
+        
+            /*.prev-btn,
+            .next-btn {
+                position: absolute;
+                top: 0;
+                transform: translateY(-50%);
+        
+                img {
+                    width: 50px;
+                    height: 50px;
+                }
+            }*/
+        }
+
+        .vertical-scroll-container {
+            position: relative;
+            display: grid;
+            grid-template-columns: 100% 100% 100% 100%;
+            gap: 30px;
+            justify-items: center;
+            overflow-x: scroll;
+            overflow-y: hidden;
+
+            .vs-slide {
+                height: 580px;
+                //border: 1px dashed #005395;
+                video {
+                    position: absolute;
+                    width: 100%;
+                    height: 580px;
+                    object-fit: cover;
+                    border-radius: 50px;
+                }
+                p {
+                    position: relative;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    padding: 0 100px;
+                    /*padding: 50px 100px;
+                    top: 90%;
+                    transform: translateY(-90%);
+                    background-image: linear-gradient(rgba(255,255,255, 0.5), rgba(255,255,255,1));
+                    border-radius: 60px 60px 0 0 ;*/
+                }
+            }
+        }
+        
+        /*.carousel2 {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        
+            .carousel2-slide {
+                position: relative;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+        
+                video {
+                    position: absolute;
+                    width: 100%;
+                    height: 580px;
+                    object-fit: cover;
+                    border-radius: 50px;
+                    //opacity: 0.5;
+                }
+                
+                p {
+                    position: relative;
+                    padding: 100px;
+                }
+            }
+        
+            //.prev-btn2,
+            //.next-btn2 
+            .prev-btn-div2,
+            .next-btn-div2 {
+                position: absolute;
+                top: 0;
+        
+                img {
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+        }*/
+    }
+}
+
+/*==========SCROLLBAR==========*/
+
+/*::-webkit-scrollbar{
+    width: 0;
+}
+::-webkit-scrollbar-track{
+    background-color: #7E1111;
+}
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(#DDAC4A, #F5D278, #DDAC4A);
+    border-radius: 10px;
+}*/
