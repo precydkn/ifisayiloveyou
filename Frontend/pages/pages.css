@@ -1,0 +1,135 @@
+@charset "UTF-8";
+/*==========FONTS==========*/
+@import url("https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Dongle&family=Kirang+Haerang&family=Kosugi+Maru&family=Noto+Sans+Mono:wght@100..900&display=swap");
+/*page scrollbar format*/
+html {
+  scroll-behavior: smooth; /*smooth scroll movement when clicking anchors*/
+  scroll-padding-top: 90px; /*prevents navbar from covering target section*/
+}
+
+html::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+body {
+  margin: 0;
+  font-family: "Dongle";
+  background-color: #299CF9;
+}
+body h1 {
+  font-family: "Kirang Haerang";
+  font-size: 50px;
+  font-weight: normal;
+  color: #D3E0F8;
+  text-align: center;
+  -webkit-text-stroke-width: 1.7px;
+  -webkit-text-stroke-color: black;
+}
+
+header nav {
+  background-color: black;
+  font-family: "Kirang Haerang";
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding-right: 20px;
+  box-sizing: border-box; /* ensures padding doesn’t affect width calculation */
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border-radius: 0 0 10px 10px;
+  border: 2px solid rgba(0, 0, 0, 0.5);
+}
+header nav .bnd-logo {
+  margin-right: auto;
+}
+header nav .bnd-logo img {
+  height: 100px;
+}
+header nav .nav-btns {
+  margin-left: auto;
+  width: 1000px;
+  display: flex;
+  justify-content: space-between;
+}
+header nav .nav-btns a {
+  text-decoration: none;
+  font-size: 50px;
+  color: white;
+  -webkit-text-stroke-width: 1.7px;
+  -webkit-text-stroke-color: black;
+}
+header nav .nav-btns #current, header nav .nav-btns a:hover {
+  font-family: "Black And White Picture";
+  color: #D3E0F8;
+  -webkit-text-stroke-width: 1px;
+}
+
+section {
+  font-size: 30px;
+  padding: 50px;
+}
+section p {
+  line-height: 1;
+}
+section #Login {
+  display: flex;
+  justify-content: center;
+}
+section #Login .log-container {
+  background-color: white;
+  padding: 30px 70px;
+  width: 800px;
+  text-align: center;
+  border-radius: 50px;
+  /*contact file*/
+}
+section #Login .log-container input {
+  border: 1 solid #646464;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0);
+  font-size: 16px;
+  font-family: "Dongle";
+  width: 80%;
+  height: 50px;
+  padding: 0 10px;
+  margin: 10px 0;
+}
+section #Login .log-container input:focus {
+  outline: none;
+}
+section #Login .log-container a {
+  color: #8AB9CD;
+  text-decoration: none;
+}
+section #Login .log-container a:hover {
+  color: #C8BDB7;
+  transition: 0.2s;
+}
+section #Login .log-container button {
+  font-family: "Dongle";
+  font-size: medium;
+  padding: 10px 20px;
+  background-color: #477AAE;
+  color: white;
+  border: none;
+}
+section #Login .log-container button:hover {
+  background-color: #8AB9CD;
+  transition: 0.3s;
+  cursor: pointer;
+}
+section #Login .log-container .name {
+  display: flex;
+  gap: 20px;
+}
+section #Login .log-container textarea {
+  width: 98%;
+  resize: vertical;
+  padding: 10px;
+  margin-top: 10px;
+  font-family: "Playfair Display", serif;
+}
+section #Login .log-container .send {
+  margin-top: 20px;
+}/*# sourceMappingURL=pages.css.map */
