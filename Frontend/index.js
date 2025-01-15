@@ -1,5 +1,24 @@
+//==========PAGE ANIMATIONS==========
+// using Animation On Scroll Library (https://michalsnik.github.io/aos/) for elements animations
+AOS.init();
+AOS.init({
+    once: true, //animations will only play once (when scrolled up, animation on load does not play anymore)
+    offset: 300 //so animation will trigger 300px from og trigger point
+});
+
+// using TypeIt Library (https://www.typeitjs.com/) for typewritter animations
+document.querySelectorAll('.quote').forEach((element) => {
+    new TypeIt(element, {
+        speed: 8,
+        waitUntilVisible: true,
+        loop: false,
+        nextStringDelay: 1, //so typeit doesn't pause too long on <br>s
+        cursor: false,
+    }).go();
+});
+
 //==========LYRICS===========
-function Lyrics() {
+function LyricsTooltip() {
     const lyricsSpans = document.querySelectorAll('.full-lyrics'); // select all spans with the class 'full-lyrics'
 
     // add mousemove/mouseleav functions to each span
@@ -180,55 +199,30 @@ function Carousel() {
     });
 }
 
-
-document.addEventListener("DOMContentLoaded", function() {
-    Lyrics();
-    Carousel();
-});
-
-
-
-
-
-/*document.addEventListener("DOMContentLoaded", () => {
-    const sections = document.querySelectorAll("section .part");
-    const body = document.body;
-
-    const observerOptions = {
-        root: null, // Use the viewport as the root
-        threshold: 0.05, // Trigger when 50% of the section is visible
+//===========HorizontalScroll===========
+function HorizontalScrollAnim() {
+    const options = {
+        root: document.querySelector(".horizontal-scroll-container"), //make the container div the root
+        threshold: 0.2, // animation will trigger when 20% of the element is scrolled
     };
-
-    const observerCallback = (entries) => {
+    
+    const horizontalScrollCallback = (entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
-                const backgroundColor = entry.target.dataset.background;
-                body.style.backgroundColor = backgroundColor;
+                entry.target.classList.add("visible");
             }
         });
     };
-
-    //*was removed from here
-
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-    sections.forEach((section) => observer.observe(section));
-});*/
-
-//*
-/*const observerCallback = (entries) => {
-        let maxRatio = 0;
-        let dominantSection = null;
     
-        entries.forEach((entry) => {
-            if (entry.intersectionRatio > maxRatio) {
-                maxRatio = entry.intersectionRatio;
-                dominantSection = entry;
-            }
-        });
+    const horizontalScrollDiv = new IntersectionObserver(horizontalScrollCallback, options);
     
-        if (dominantSection && dominantSection.isIntersecting) {
-            const backgroundColor = dominantSection.target.dataset.background;
-            body.style.backgroundColor = backgroundColor;
-        }
-    };*/
+    document.querySelectorAll(".fade-in").forEach((elem) => horizontalScrollDiv.observe(elem));
+}
+
+
+// call all functions on load
+document.addEventListener("DOMContentLoaded", function() {
+    LyricsTooltip();
+    Carousel();
+    HorizontalScrollAnim();
+});
