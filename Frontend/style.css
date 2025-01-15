@@ -54,6 +54,7 @@ header nav {
 }
 header nav .bnd-logo {
   margin-right: auto;
+  pointer-events: none; /*make it unclickable*/
 }
 header nav .bnd-logo img {
   height: 100px;
@@ -78,21 +79,22 @@ header nav .nav-btns #current, header nav .nav-btns a:hover {
 }
 
 /*==========SECTION==========*/
-section {
-  font-size: 30px;
-  /*=====ABOUT=====*/
-  /*=====LYRICS SECTION=====*/
-  /*=====ANALYSIS SECTION=====*/
-}
-section p {
-  line-height: 1;
-}
-section .container {
-  max-width: 1400px;
-  margin-bottom: 50px;
+.container {
+  width: 1400px;
+  padding-bottom: 120px;
   display: flex;
   justify-self: center;
   flex-direction: column;
+}
+
+section {
+  font-size: 30px;
+  /*=====ABOUT DIV=====*/
+  /*=====LYRICS DIV=====*/
+  /*=====ANALYSIS DIV=====*/
+}
+section p {
+  line-height: 1;
 }
 section #About {
   background-color: #299CF9;
@@ -313,4 +315,57 @@ section #Analysis .fade-in {
 section #Analysis .fade-in.visible {
   opacity: 1;
   transform: translateX(0);
+}
+
+/*==========FOOTER==========*/
+footer {
+  background-color: #299CF9;
+  font-size: 30px;
+}
+footer .container {
+  padding: 30px 0 0;
+  margin: 0;
+}
+footer .container h1 {
+  text-align: left;
+}
+footer .container .footer-flex {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 100px;
+  justify-content: right;
+  width: 100%;
+}
+footer .container .footer-flex div {
+  width: 100%;
+}
+footer .container .footer-flex .footer-bnd-logo {
+  text-align: right;
+}
+footer .container .footer-flex .footer-bnd-logo img {
+  width: auto;
+  height: 300px;
+}
+footer .container .footer-flex .socials-copyright {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+footer .ribbon {
+  background-image: url("img/footer ribbon.png");
+  height: 150px;
+  background-repeat: repeat-x;
+  background-position: center;
+  background-size: contain;
+  animation: marquee 30s infinite linear;
+}
+
+/*footer ribbon animation*/
+@keyframes marquee {
+  0% {
+    background-position: 0;
+  }
+  100% {
+    background-position: -1190px;
+  }
 }/*# sourceMappingURL=style.css.map */
