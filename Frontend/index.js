@@ -3,11 +3,11 @@
 AOS.init();
 AOS.init({
     once: true, //animations will only play once (when scrolled up, animation on load does not play anymore)
-    offset: 300 //so animation will trigger 300px from og trigger point
+    offset: 250 //so animation will trigger 250px from og trigger point
 });
 
 // using TypeIt Library (https://www.typeitjs.com/) for typewritter animations
-document.querySelectorAll('.quote').forEach((element) => {
+/*document.querySelectorAll('.quote').forEach((element) => {
     new TypeIt(element, {
         speed: 8,
         waitUntilVisible: true,
@@ -15,7 +15,7 @@ document.querySelectorAll('.quote').forEach((element) => {
         nextStringDelay: 1, //so typeit doesn't pause too long on <br>s
         cursor: false,
     }).go();
-});
+});*/
 
 //==========LYRICS===========
 function LyricsTooltip() {
