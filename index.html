@@ -7,15 +7,16 @@
     
     <link rel="icon" href="Frontend/img/bnd house logo.png" type="image/x-icon"> <!--web icon-->
     <link rel="stylesheet" href="Frontend/style.css"> <!--css link-->
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"> <!--AOS css link-->
+    <!--<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"> AOS css link-->
 </head>
 <body id="Home"> <!--when home from nav is clicked, page will scroll to beginning/very top of page-->
     <header>
         <video autoplay muted loop>
             <source src="Frontend/img/home video.mp4" type="video/mp4">
         </video>
-        <nav>
+        <nav class="nav">
             <a href="#/" class="bnd-logo"><img src="Frontend/img/bnd word logo.png" alt="BND logo"></a>
+            <div class="nav-toggle-container"><button id="nav-toggle" onclick="toggleMobileNav()">☰</button></div>
             <div class="nav-btns">
                 <a href="#Home" id="current">Home</a>           
                 <a href="#About">About</a>
@@ -84,7 +85,7 @@
                             더는 기타 한 번도 들지 못 하고<br>
                             그날 이후로 난 이렇게 살아<br>
                             웃기지 그런데<br>
-                            오늘만 I love you <span class="aishteru">愛してる</span> 사랑해라 말하고<br>
+                            오늘만 I love you <span class="aishiteru">愛してる</span> 사랑해라 말하고<br>
                             말하고 후회하면 좀 괜찮을까<br>
                             Love you<br><br>
                         </span>
@@ -97,7 +98,7 @@
                 </div>
                 <div class="lyrics-second" >
                     <p>
-                        <span class="full-lyrics" id="l6" data-aos="fade-up" >                            
+                        <span class="full-lyrics" id="l6" data-aos="fade-up">                            
                             Wanna tell ya<br>
                             영감을 받은 척하고<br>
                             뻔한 가사를 써봐도<br>
@@ -119,7 +120,7 @@
                             더는 기타 한 번도 들지 못 하고<br>
                             그날 이후로 난 이렇게 살아<br>
                             웃기지 그런데<br>
-                            오늘만 I love you <span>愛してる</span>  사랑해라 말하고<br>
+                            오늘만 I love you <span class="aishiteru">愛してる</span>  사랑해라 말하고<br>
                             말하고 후회하면 좀 괜찮을까<br>
                             Love you<br><br>
                         </span>
@@ -136,7 +137,7 @@
                         <span class="full-lyrics" id="l10" data-aos="fade-up" >                            
                             (I love you)<br>
                             Dum dum dum yeah<br>
-                            (<span>愛してる</span> 사랑해)<br>
+                            (<span class="aishiteru">愛してる</span> 사랑해)<br>
                             Dum dum dum yeah
                         </span>
                     </p>
@@ -148,6 +149,7 @@
 
         <div id="Analysis"> 
             <h1 data-aos="zoom-out-up">Analysis</h1>
+            
             <div class="container">
                 <div class="analysis-container">
                     <p  data-aos="fade-up">
@@ -166,56 +168,58 @@
                         As this verse plays, the music video shows Taesan, the main protagonist, joined with the other group members who represent his other personalities whom he made as a way to cope with his heartbreak. Different scenes in the music video continuously hint at this narrative.
                     </p>
                 </div>
+            </div>
 
-                <!--video carousel w/caption-->                
-                <div class="carousel" data-aos="flip-up">
-                    <div class="prev-btn-div"><button id="prevBtn">←<!--<img src="p-img/rooms/arrowl.png" alt="Previous" class="prev">--></button></div>
-                    <div class="carousel-slides-container">
-                        <div class="carousel-slide">
-                            <video autoplay muted loop>
-                                <source src="Frontend/img/hints.mp4" type="video/mp4">
-                            </video>
-                            <p>The six personalities represented by each member.</p>
-                        </div>
-    
-                        <div class="carousel-slide">
-                            <video autoplay muted loop>
-                                <source src="Frontend/img/hint1.mp4" type="video/mp4">
-                            </video>
-                            <p>When Jaehyun is behind the camera, but the face captured is Woonhak.</p>
-                        </div>
-    
-                        <div class="carousel-slide">
-                            <video autoplay muted loop>
-                                <source src="Frontend/img/hint2.mp4" type="video/mp4">
-                            </video>
-                            <p>The other members moving as one in each television.</p>
-                        </div>
-    
-                        <div class="carousel-slide">
-                            <video autoplay muted loop>
-                                <source src="Frontend/img/hint3.mp4" type="video/mp4">
-                            </video>
-                            <p>The members yawning at the same time right after Leehan.</p>
-                        </div>
-    
-                        <div class="carousel-slide">
-                            <video autoplay muted loop>
-                                <source src="Frontend/img/hint4.mp4" type="video/mp4">
-                            </video>
-                            <p>The members popping out behind Riwoo in the photo booth.</p>
-                        </div>
-                        
-                        <div class="carousel-slide">
-                            <video autoplay muted loop>
-                                <source src="Frontend/img/hint5.mp4" type="video/mp4">
-                            </video>
-                            <p>Them being with the same girl as the same place.</p>
-                        </div>
+            <!--video carousel w/caption-->
+            <div class="carousel" data-aos="flip-up">
+                <div class="prev-btn-div"><button id="prevBtn">←</button></div>
+                <div class="carousel-slides-container">
+                    <div class="carousel-slide">
+                        <video autoplay muted loop>
+                            <source src="Frontend/img/hints.mp4" type="video/mp4">
+                        </video>
+                        <p>The six personalities represented by each member.</p>
                     </div>
-                    <div class="next-btn-div"><button id="nextBtn">→<!--<img src="p-img/rooms/arrowl.png" alt="Next" class="prev">--></button></div>
-                </div>
 
+                    <div class="carousel-slide">
+                        <video autoplay muted loop>
+                            <source src="Frontend/img/hint1.mp4" type="video/mp4">
+                        </video>
+                        <p>When Jaehyun is behind the camera, but the face captured is Woonhak.</p>
+                    </div>
+
+                    <div class="carousel-slide">
+                        <video autoplay muted loop>
+                            <source src="Frontend/img/hint2.mp4" type="video/mp4">
+                        </video>
+                        <p>The other members moving as one in each television.</p>
+                    </div>
+
+                    <div class="carousel-slide">
+                        <video autoplay muted loop>
+                            <source src="Frontend/img/hint3.mp4" type="video/mp4">
+                        </video>
+                        <p>The members yawning at the same time right after Leehan.</p>
+                    </div>
+
+                    <div class="carousel-slide">
+                        <video autoplay muted loop>
+                            <source src="Frontend/img/hint4.mp4" type="video/mp4">
+                        </video>
+                        <p>The members popping out behind Riwoo in the photo booth.</p>
+                    </div>
+                    
+                    <div class="carousel-slide">
+                        <video autoplay muted loop>
+                            <source src="Frontend/img/hint5.mp4" type="video/mp4">
+                        </video>
+                        <p>Them being with the same girl as the same place.</p>
+                    </div>
+                </div>
+                <div class="next-btn-div"><button id="nextBtn">→</button></div>
+            </div>
+
+            <div class="container">
                 <div class="analysis-container">
                     <p class="quote" data-aos="fade-down">
                         Dirty laundry's overflowing in the washer<br>
@@ -274,86 +278,50 @@
                     </p>
                     <p class="after-quote" data-aos="fade-up">The bridge seems to be about how he feels about music now—inauthentic, forced, and meaningless—now that they are no longer together.</p>
                 </div>
-        
-                <!--video + paragraph vertical scroll-->
-                <div class="horizontal-scroll" data-aos="flip-down">
-                    <div class="horizontal-scroll-container">
-                        <div class="hs-slide fade-in">
-                            <video autoplay muted loop>
-                                <source src="Frontend/img/a-vid1.mp4" type="video/mp4">
-                            </video>
-                            <p>
-                                But why is it that Taesan is only about to confess in the music video? The theory is that the whole video is just a reminiscence of the day he confesses to the girl, meaning it is set in the past.<br><br>
-                        
-                                Tripping on someone, approaching the wrong girl, getting hit on the head with a snowball, then fainting from the impact—it started with Taesan fumbling his confession. This could be his imagination of the situation in a way so that he wouldn't be able to confess—a way of coping with the heartbreak, like a wish for the confession to not have happened at all.
-                            </p>
-                        </div>
-        
-                        <div class="hs-slide fade-in">
-                            <video autoplay muted loop>
-                                <source src="Frontend/img/a-vid2.mp4" type="video/mp4">
-                            </video>
-                            <p>
-                                However, in the final scene, we return to the beginning sequence of the video, only this time, he goes for the right girl. The line “What’s it matter anyway” is heard before he starts running with a determined expression on his face, a representation that even if he knows he'll regret confessing because of the heartbreak he would later experience, he'll still do it anyway.
-                            </p>
-                        </div>
-        
-                        <div class="hs-slide fade-in">
-                            <video autoplay muted loop>
-                                <source src="Frontend/img/a-vid3.mp4" type="video/mp4">
-                            </video>
-                            <p>
-                                His feelings are confessed through the yellow flower concealed and preserved by the coolness of the snowball, possibly a representation of the love he continued to have for the girl and how precious these feelings are to him still.
-                            </p>
-                        </div>
-        
-                        <div class="hs-slide fade-in">
-                            <video autoplay muted loop>
-                                <source src="Frontend/img/a-vid4.mp4" type="video/mp4">
-                            </video>
-                            <p>The video ends with split-second shots of the members, a final detail solidifying the fact that the group members are indeed, one person.</p>
-                        </div>
+            </div>
+
+            <!--video + paragraph vertical scroll-->
+            <div class="horizontal-scroll" data-aos="flip-down">
+                <div class="horizontal-scroll-container">
+                    <div class="hs-slide fade-in">
+                        <video autoplay muted loop>
+                            <source src="Frontend/img/a-vid1.mp4" type="video/mp4">
+                        </video>
+                        <p>
+                            But why is it that Taesan is only about to confess in the music video? The theory is that the whole video is just a reminiscence of the day he confesses to the girl, meaning it is set in the past.<br><br>
+                    
+                            Tripping on someone, approaching the wrong girl, getting hit on the head with a snowball, then fainting from the impact—it started with Taesan fumbling his confession. This could be his imagination of the situation in a way so that he wouldn't be able to confess—a way of coping with the heartbreak, like a wish for the confession to not have happened at all.
+                        </p>
+                    </div>
+    
+                    <div class="hs-slide fade-in">
+                        <video autoplay muted loop>
+                            <source src="Frontend/img/a-vid2.mp4" type="video/mp4">
+                        </video>
+                        <p>
+                            However, in the final scene, we return to the beginning sequence of the video, only this time, he goes for the right girl. The line “What’s it matter anyway” is heard before he starts running with a determined expression on his face, a representation that even if he knows he'll regret confessing because of the heartbreak he would later experience, he'll still do it anyway.
+                        </p>
+                    </div>
+    
+                    <div class="hs-slide fade-in">
+                        <video autoplay muted loop>
+                            <source src="Frontend/img/a-vid3.mp4" type="video/mp4">
+                        </video>
+                        <p>
+                            His feelings are confessed through the yellow flower concealed and preserved by the coolness of the snowball, possibly a representation of the love he continued to have for the girl and how precious these feelings are to him still.
+                        </p>
+                    </div>
+    
+                    <div class="hs-slide fade-in">
+                        <video autoplay muted loop>
+                            <source src="Frontend/img/a-vid4.mp4" type="video/mp4">
+                        </video>
+                        <p>The video ends with split-second shots of the members, a final detail solidifying the fact that the group members are indeed, one person.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <footer>
-        <div class="container" data-aos="zoom-in-up">            
-            <div class="footer-flex">
-                <div data-aos="zoom-in-right">
-                    <h1>Contacts</h1>
-                    <p>
-                        +82 01 2345 6789<br>
-                        KOZ ENTERTAINMENT<br>
-                        A. 42, Hangang daero,<br>
-                        Yongsan gu, Seoul, 04389 Korea
-                    </p>
-                </div>
-
-                <div class="socials-copyright" data-aos="zoom-in-up">
-                    <div>
-                        <h1>Connect with BOYNEXTDOOR</h1>
-                        <a href="https://x.com/BOYNEXTDOOR_KOZ" target="_blank"><img src="Frontend/img/icon_x1.png" alt="X1"></a>
-                        <a href="https://x.com/BOYNEXTDOOR_twt" target="_blank"><img src="Frontend/img/icon_x2.png" alt="X2"></a>
-                        <a href="https://www.facebook.com/BOYNEXTDOOR.official" target="_blank"><img src="Frontend/img/icon_fb.png" alt="Facebook"></a>
-                        <a href="https://www.instagram.com/boynextdoor_official/" target="_blank"><img src="Frontend/img/icon_ig.png" alt="Instagram"></a>
-                        <a href="https://weverse.io/boynextdoor/" target="_blank"><img src="Frontend/img/icon_wev.png" alt="Weverse"></a>
-                        <a href="https://www.youtube.com/@BOYNEXTDOOR_official" target="_blank"><img src="Frontend/img/icon_yt.png" alt="Youtube"></a>
-                        <a href="https://weibo.com/boynextdoorkoz" target="_blank"><img src="Frontend/img/icon_wei.png" alt="Weibo"></a>
-                        <a href="https://www.tiktok.com/@boynextdoor_official" target="_blank"><img src="Frontend/img/icon_tt.png" alt="Tiktok"></a>
-                    </div>
-
-                    <div><p class="copyright">Copyright © 2025 | Precyleigh Diokno | CC Yr 2 Gr 3</p></div>
-                </div>
-
-                <div class="footer-bnd-logo" data-aos="zoom-in-left"><img src="Frontend/img/bnd word logo 2.png" alt=""></div>
-            </div>
-            
-        </div>
-        <div class="ribbon"></div>
-    </footer>
 
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> <!--AOS library-->
