@@ -17,6 +17,24 @@ AOS.init({
     }).go();
 });*/
 
+
+//==========MOBILE NAV TOGGLE==========
+function toggleMobileNav() {
+    const navBtnsContainer = document.querySelector('.nav-btns');
+    const navBar = document.querySelector(".nav");
+    
+    if (navBtnsContainer.style.display === "none") {
+        navBtnsContainer.style.display = "block";
+        navBar.style.border = "1px solid black";
+        navBar.style.backdropFilter = "blur(10px)";
+    }
+    else {
+        navBtnsContainer.style.display = "none";
+        navBar.style.border = "none";
+        navBar.style.backdropFilter = "none";
+    }
+}
+
 //==========LYRICS===========
 function LyricsTooltip() {
     const lyricsSpans = document.querySelectorAll('.full-lyrics'); // select all spans with the class 'full-lyrics'
@@ -222,6 +240,7 @@ function HorizontalScrollAnim() {
 
 // call all functions on load
 document.addEventListener("DOMContentLoaded", function() {
+    //MobileNavbar();
     LyricsTooltip();
     Carousel();
     HorizontalScrollAnim();
