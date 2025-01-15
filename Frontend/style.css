@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /*==========FONTS==========*/
 @import url("https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Dongle&family=Kirang+Haerang&family=Kosugi+Maru&family=Noto+Sans+Mono:wght@100..900&display=swap");
-/*page scrollbar format*/
+/*==========PAGE SCROLLBAR==========*/
 html {
   scroll-behavior: smooth; /*smooth scroll movement when clicking anchors*/
   scroll-padding-top: 90px; /*prevents navbar from covering target section*/
@@ -27,16 +27,16 @@ body h1 {
   -webkit-text-stroke-color: black;
 }
 
+/*==========HEADER==========*/
 header {
   height: 100vh; /*header height is the same as video*/
 }
 header video {
-  /*opacity: 0.5;*/
   position: absolute; /*put the nav on top of vid*/
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover; /*occupy the whole div*/
+     object-fit: cover; /*so when screen is not full screen, video is cut*/
 }
 header nav {
   font-family: "Kirang Haerang";
@@ -77,8 +77,12 @@ header nav .nav-btns #current, header nav .nav-btns a:hover {
   -webkit-text-stroke-width: 1px;
 }
 
+/*==========SECTION==========*/
 section {
   font-size: 30px;
+  /*=====ABOUT=====*/
+  /*=====LYRICS SECTION=====*/
+  /*=====ANALYSIS SECTION=====*/
 }
 section p {
   line-height: 1;
@@ -133,8 +137,8 @@ section #Lyrics .lyrics-container .lyrics-second {
 }
 section #Lyrics .lyrics-container .ily {
   position: absolute;
-  top: 170px;
-  right: 200px;
+  top: 20;
+  right: 150px;
   height: 400px;
   /*border: 1px solid white;*/
 }
@@ -150,7 +154,6 @@ section #Lyrics .bathtub-boy {
 section #Analysis {
   background-color: #C8BDB7;
   border: 1px solid #C8BDB7;
-  /*scrollbar format*/
   /*.carousel2 {
       position: relative;
       width: 100%;
@@ -213,17 +216,6 @@ section #Analysis .carousel {
   display: flex;
   justify-content: center;
   align-items: center;
-  /*.prev-btn,
-  .next-btn {
-      position: absolute;
-      top: 0;
-      transform: translateY(-50%);
-
-      img {
-          width: 50px;
-          height: 50px;
-      }
-  }*/
 }
 section #Analysis .carousel .carousel-slides-container {
   width: 100%;
@@ -279,7 +271,7 @@ section #Analysis .carousel .prev-btn-div {
 section #Analysis .carousel .next-btn-div {
   right: 20px;
 }
-section #Analysis .vertical-scroll-container {
+section #Analysis .horizontal-scroll-container {
   position: relative;
   display: grid;
   grid-template-columns: 100% 100% 100% 100%;
@@ -288,10 +280,11 @@ section #Analysis .vertical-scroll-container {
   overflow-x: scroll;
   overflow-y: hidden;
 }
-section #Analysis .vertical-scroll-container .vs-slide {
+section #Analysis .horizontal-scroll-container .hs-slide {
   height: 580px;
 }
-section #Analysis .vertical-scroll-container .vs-slide video {
+section #Analysis .horizontal-scroll-container .hs-slide video {
+  opacity: 0.75; /*to make is appear like it has an overlay for the text*/
   position: absolute;
   width: 100%;
   height: 580px;
@@ -299,33 +292,25 @@ section #Analysis .vertical-scroll-container .vs-slide video {
      object-fit: cover;
   border-radius: 50px;
 }
-section #Analysis .vertical-scroll-container .vs-slide p {
+section #Analysis .horizontal-scroll-container .hs-slide p {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
-  padding: 0 100px;
-  /*padding: 50px 100px;
-  top: 90%;
-  transform: translateY(-90%);
-  background-image: linear-gradient(rgba(255,255,255, 0.5), rgba(255,255,255,1));
-  border-radius: 60px 60px 0 0 ;*/
+  padding: 0 200px;
 }
-section #Analysis .vertical-scroll-container::-webkit-scrollbar {
+section #Analysis .horizontal-scroll-container::-webkit-scrollbar {
   height: 8px; /* Adjust scrollbar height */
 }
-section #Analysis .vertical-scroll-container::-webkit-scrollbar-thumb {
+section #Analysis .horizontal-scroll-container::-webkit-scrollbar-thumb {
   background: #005395; /* Adjust color */
   border-radius: 4px;
 }
-
-/*==========SCROLLBAR==========*/
-/*::-webkit-scrollbar{
-    width: 0;
+section #Analysis .fade-in {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: opacity 0.6s;
 }
-::-webkit-scrollbar-track{
-    background-color: #7E1111;
-}
-::-webkit-scrollbar-thumb{
-    background: linear-gradient(#DDAC4A, #F5D278, #DDAC4A);
-    border-radius: 10px;
-}*//*# sourceMappingURL=style.css.map */
+section #Analysis .fade-in.visible {
+  opacity: 1;
+  transform: translateX(0);
+}/*# sourceMappingURL=style.css.map */
