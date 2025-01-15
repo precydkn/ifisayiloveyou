@@ -66,6 +66,7 @@ header {
         
         .bnd-logo {
             margin-right: auto;
+            pointer-events: none; /*make it unclickable*/
             //border: 1px dashed black; /*remove after*/
             img {
                 height: 100px;
@@ -95,21 +96,21 @@ header {
 }
 
 /*==========SECTION==========*/
+.container {
+    width: 1400px;
+    padding-bottom: 120px;
+    display: flex;
+    justify-self: center;
+    flex-direction: column;
+    //border: 1px dashed white;
+}
 section {
     font-size: 30px;
     p {
         line-height: 1;
     }
-    .container {
-        max-width: 1400px;
-        margin-bottom: 50px;
-        display: flex;
-        justify-self: center;
-        flex-direction: column;
-        //border: 1px dashed white;
-    }
 
-    /*=====ABOUT=====*/
+    /*=====ABOUT DIV=====*/
     #About {
         background-color: $blue-album;
         border: 1px solid $blue-album;
@@ -132,7 +133,7 @@ section {
         }
     }
     
-    /*=====LYRICS SECTION=====*/
+    /*=====LYRICS DIV=====*/
     #Lyrics {
         background-color: black;
         border: 1px solid black;
@@ -176,7 +177,7 @@ section {
         }
     }
     
-    /*=====ANALYSIS SECTION=====*/
+    /*=====ANALYSIS DIV=====*/
     #Analysis {
         background-color: $taupe;
         border: 1px solid $taupe;
@@ -356,5 +357,71 @@ section {
                 }
             }
         }*/
+    }
+}
+
+/*==========FOOTER==========*/
+footer {
+    background-color: $blue-album;
+    font-size: 30px;
+    //border: 1px solid #005395;
+    
+    .container {
+        padding: 30px 0 0;
+        margin: 0;
+
+        h1 {
+            text-align: left;
+        }
+        
+        .footer-flex {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            gap: 100px;
+            justify-content: right;
+            width: 100%;
+            //border: 1px dashed white;
+
+            div {
+                width: 100%;
+                //border: 1px dashed pink;
+            }
+
+            .footer-bnd-logo {
+                text-align: right;
+                img {
+                    width: auto;
+                    height: 300px;
+                }
+            }
+
+            .socials-copyright {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+        }
+    }
+
+    .ribbon {
+        background-image: url("img/footer ribbon.png");
+        height: 150px;
+        background-repeat: repeat-x;
+        background-position: center;
+        background-size: contain;
+        animation: marquee 30s infinite linear;
+
+        //border: 1px dashed pink;
+    }
+}
+
+/*footer ribbon animation*/
+@keyframes marquee {
+    0% {
+        background-position: 0;
+    }
+  
+    100% {
+        background-position: -1190px;
     }
 }
