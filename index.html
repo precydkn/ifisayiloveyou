@@ -7,8 +7,9 @@
     
     <link rel="icon" href="Frontend/img/bnd house logo.png" type="image/x-icon"> <!--web icon-->
     <link rel="stylesheet" href="Frontend/style.css"> <!--css link-->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"> <!--AOS css link-->
 </head>
-<body>
+<body id="Home"> <!--when home from nav is clicked, page will scroll to beginning/very top of page-->
     <header>
         <video autoplay muted loop>
             <source src="Frontend/img/home video.mp4" type="video/mp4">
@@ -26,14 +27,14 @@
     </header>
 
     <section>
-        <div id="About"> 
-            <h1>About this song</h1>
+        <div id="About" data-aos="fade-up"> 
+            <h1 data-aos="zoom-out-up" data-aos-duration=5000>About this song</h1>
             <div class="container">
                 <div class="song">
-                    <div class="embeded">
+                    <div class="embeded" data-aos="fade-up-right">
                         <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/7GOIrZTegzVty8mhNhRuA0?utm_source=generator" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                     </div>
-                    <div>
+                    <div data-aos="fade-up-left">
                         <p>
                             Release Date: January 6, 2025<br>
                             Lyrics: Kako, WOONHAK<br>
@@ -51,24 +52,24 @@
         </div>
 
         <div id="Lyrics"> 
-            <h1>Lyrics</h1>
-            <div class="lyrics-container">
+            <h1 data-aos="zoom-out-up" data-aos-duration=5000>Lyrics</h1>
+            <div class="lyrics-container" data-aos="zoom-in">
                 <div>
                     <p>
-                        <span class="full-lyrics" id="l1">
+                        <span class="full-lyrics" id="l1" data-aos="fade-up">
                             그날 이후로 난 이렇게 살고<br>
                             더는 기타 한 번도 들지 못 하고<br>
                             그날 이후로 난 이렇게 살아<br>
                             웃기지 그런데<br><br>
                         </span>
     
-                        <span class="full-lyrics" id="l2">
+                        <span class="full-lyrics" id="l2" data-aos="fade-up">
                             세탁기는 가득히 밀려버린 빨래를 토해내고<br>
                             머리는 붕 떠 부스스해<br>
                             나 빼고 분주한 창밖은 벚꽃마저 바쁘고<br><br>
                         </span>
     
-                        <span class="full-lyrics" id="l3">                            
+                        <span class="full-lyrics" id="l3" data-aos="fade-up">                            
                             한심하기로<br>
                             퍽 짝이 없어도<br>
                             당장에 내가 내일<br>
@@ -78,7 +79,7 @@
                             딱 죽기보다 싫은데<br><br>
                         </span>
     
-                        <span class="full-lyrics" id="l4">                            
+                        <span class="full-lyrics" id="l4" data-aos="fade-up">                            
                             그날 이후로 난 이렇게 살고<br>
                             더는 기타 한 번도 들지 못 하고<br>
                             그날 이후로 난 이렇게 살아<br>
@@ -88,15 +89,15 @@
                             Love you<br><br>
                         </span>
 
-                        <span class="full-lyrics" id="l5">
+                        <span class="full-lyrics" id="l5" data-aos="fade-up">
                             Dum dum dum yeah<br>
                             Dum dum dum yeah
                         </span>
                     </p>
                 </div>
-                <div class="lyrics-second">
+                <div class="lyrics-second" >
                     <p>
-                        <span class="full-lyrics" id="l6">                            
+                        <span class="full-lyrics" id="l6" data-aos="fade-up" >                            
                             Wanna tell ya<br>
                             영감을 받은 척하고<br>
                             뻔한 가사를 써봐도<br>
@@ -107,13 +108,13 @@
                             지겹지만<br><br>
                         </span>
     
-                        <span class="full-lyrics" id="l7">
+                        <span class="full-lyrics" id="l7" data-aos="fade-up" >
                             추억 팔아서<br>
                             곡이나 쓰는 건<br>
                             딱 죽기보다 싫은데<br><br>
                         </span>
     
-                        <span class="full-lyrics" id="l8">                            
+                        <span class="full-lyrics" id="l8" data-aos="fade-up" >                            
                             그날 이후로 난 이렇게 살고<br>
                             더는 기타 한 번도 들지 못 하고<br>
                             그날 이후로 난 이렇게 살아<br>
@@ -123,7 +124,7 @@
                             Love you<br><br>
                         </span>
     
-                        <span class="full-lyrics" id="l9">                            
+                        <span class="full-lyrics" id="l9" data-aos="fade-up" >                            
                             솔직히 말해 음악 같은 건<br>
                             감정 소모밖엔 안 되니까<br>
                             가사 쓰고 기타 치는 건 의미도 없고<br>
@@ -132,7 +133,7 @@
                             다 별거 없는 거잖아<br><br>
                         </span>
     
-                        <span class="full-lyrics" id="l10">                            
+                        <span class="full-lyrics" id="l10" data-aos="fade-up" >                            
                             (I love you)<br>
                             Dum dum dum yeah<br>
                             (<span>愛してる</span> 사랑해)<br>
@@ -146,10 +147,10 @@
         </div>
 
         <div id="Analysis"> 
-            <h1>Analysis</h1>
+            <h1 data-aos="zoom-out-up" data-aos-duration=5000>Analysis</h1>
             <div class="container">
-                <div class="analysis-container">                    
-                    <p>
+                <div class="analysis-container">
+                    <p  data-aos="fade-up">
                         The song is written from the point of view of a boy experiencing the aftermath of a breakup. The intro down to the first verse introduces us to the brokenhearted state of this boy.
                     </p>
                     <p class="quote">
@@ -157,17 +158,17 @@
                         Can't even pick up the guitar anymore<br>
                         Yeah, it's just what I'm like ever since that day<br>
                         It's funny but
-                    </p>              
+                    </p>
                              
-                    <p>
+                    <p data-aos="fade-up">
                         “That day” could refer to the day of the break up. He says he is the same as that day in a way that he is still heartbroken, to the point that he can't even pick up the guitar anymore.<br><br>
         
                         As this verse plays, the music video shows Taesan, the main protagonist, joined with the other group members who represent his other personalities whom he made as a way to cope with his heartbreak. Different scenes in the music video continuously hint at this narrative.
                     </p>
                 </div>
-                    
+
                 <!--video carousel w/caption-->                
-                <div class="carousel">
+                <div class="carousel" data-aos="flip-up">
                     <div class="prev-btn-div"><button id="prevBtn">←<!--<img src="p-img/rooms/arrowl.png" alt="Previous" class="prev">--></button></div>
                     <div class="carousel-slides-container">
                         <div class="carousel-slide">
@@ -215,13 +216,13 @@
                     <div class="next-btn-div"><button id="nextBtn">→<!--<img src="p-img/rooms/arrowl.png" alt="Next" class="prev">--></button></div>
                 </div>
 
-                <div class="analysis-container">   
+                <div class="analysis-container">
                     <p class="quote">
                         Dirty laundry's overflowing in the washer<br>
                         Hair's sticking up, it's a mess<br>
                         Outside's bustling, even cherry blossoms look busy but not me<br>
                     </p>
-                    <p>The first passage of the verse shows how unkempt and detached he has been.</p>
+                    <p class="after-quote" data-aos="fade-up">The first passage of the verse shows how unkempt and detached he has been.</p>
                     
                     <p class="quote">
                         It's just pathetic<br>
@@ -232,7 +233,7 @@
                         To write another song<br>
                         There's nothing I hate more than that<br>
                     </p>
-                    <p>The second talks about how pathetic he feels as he is still hung up on the girl, and how much he hates that he is writing another song about her using his memories.</p>
+                    <p class="after-quote" data-aos="fade-up">The second talks about how pathetic he feels as he is still hung up on the girl, and how much he hates that he is writing another song about her using his memories.</p>
                     
                     <p class="quote">
                         This is just what I'm like ever since that day<br>
@@ -243,7 +244,7 @@
                         Knowing I'd regret it, would it be better that way?<br>
                         Love you<br>
                     </p>
-                    <p>
+                    <p class="after-quote" data-aos="fade-up">
                         The chorus talks about how he considers whether or not he should confess even if he would regret it. This regret could refer to the heartbreak he would go through from their break up.<br><br>
         
                         A small detail that could show just how much he truly loves this girl is in the way he says “I love you” in English, Japanese, and Korean. An added bonus is that the “I love you”s play at the 1:43 mark of the music video—this number, too, means “I love you” in slang.
@@ -259,7 +260,7 @@
                         I'll just keep on living like that, today, tomorrow, on and on<br>
                         But I'm so sick of it<br>
                     </p>
-                    <p>
+                    <p class="after-quote" data-aos="fade-up">
                         The second verse seems to be a denial of how he still loves the girl. All the lyrics he writes are still about her. He does this even when sober, hence, “So sick of being sober”. The verse ends with “But I'm so sick of it” as if to say, he doesn't want to keep pretending that their remaining feelings don't exist. The music video aligns with this as he is shown holding a book, entitled, “Say It”.
                     </p>
                     
@@ -271,13 +272,13 @@
                         So I'm done<br>
                         What<span>’</span>s it matter anyway<br>
                     </p>
-                    <p>The bridge seems to be about how he feels about music now—inauthentic, forced, and meaningless—now that they are no longer together.</p>
+                    <p class="after-quote" data-aos="fade-up">The bridge seems to be about how he feels about music now—inauthentic, forced, and meaningless—now that they are no longer together.</p>
                 </div>
         
                 <!--video + paragraph vertical scroll-->
-                <div class="vertical-scroll">
-                    <div class="vertical-scroll-container">
-                        <div class="vs-slide">
+                <div class="horizontal-scroll" data-aos="flip-down">
+                    <div class="horizontal-scroll-container">
+                        <div class="hs-slide fade-in">
                             <video autoplay muted loop>
                                 <source src="Frontend/img/a-vid1.mp4" type="video/mp4">
                             </video>
@@ -288,7 +289,7 @@
                             </p>
                         </div>
         
-                        <div class="vs-slide">
+                        <div class="hs-slide fade-in">
                             <video autoplay muted loop>
                                 <source src="Frontend/img/a-vid2.mp4" type="video/mp4">
                             </video>
@@ -297,7 +298,7 @@
                             </p>
                         </div>
         
-                        <div class="vs-slide">
+                        <div class="hs-slide fade-in">
                             <video autoplay muted loop>
                                 <source src="Frontend/img/a-vid3.mp4" type="video/mp4">
                             </video>
@@ -306,7 +307,7 @@
                             </p>
                         </div>
         
-                        <div class="vs-slide">
+                        <div class="hs-slide fade-in">
                             <video autoplay muted loop>
                                 <source src="Frontend/img/a-vid4.mp4" type="video/mp4">
                             </video>
@@ -319,9 +320,12 @@
     </section>
 
     <footer>
-
+        
     </footer>
 
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> <!--AOS library-->
+    <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script> <!--TypeIt Library-->
     <script src="Frontend/index.js"></script> <!--js script-->
 </body>
 </html>
