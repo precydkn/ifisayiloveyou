@@ -139,6 +139,12 @@ section #Signup .signup-container button:hover {
   transition: 0.3s;
   cursor: pointer;
 }
+section #Login .log-container #alert-p,
+section #Login .signup-container #alert-p,
+section #Signup .log-container #alert-p,
+section #Signup .signup-container #alert-p {
+  color: red;
+}
 
 footer {
   background-color: #299CF9;
