@@ -45,6 +45,21 @@ function LyricsTooltip() {
         span.addEventListener('mouseleave', toKorean);
     });
 
+    // func to change tooltip font size according to screen size
+    function updateTooltipFontSize() {
+        const mobile = window.matchMedia('(max-width: 480px)');
+        const tablet = window.matchMedia('(min-width: 481px) and (max-width: 1024px)');
+        const desktop = window.matchMedia('(min-width: 1025px)');
+
+        if (mobile.matches) {
+            tooltip.style.fontSize = '18px';
+        } else if (tablet.matches) {
+            tooltip.style.fontSize = '22px';
+        } else if (desktop.matches) {
+            tooltip.style.fontSize = '26px';
+        }
+    }
+
     // tooltip func for floating lyrics translation
     function toEnglish(event, l) {
         
@@ -63,6 +78,9 @@ function LyricsTooltip() {
             tooltip.style.zIndex = '1000';
             document.body.appendChild(tooltip);
         }
+        updateTooltipFontSize(); // call font size changer
+
+        window.addEventListener('resize', updateTooltipFontSize); // added eventlistener to window to update tooltip font size
 
         // lyrics eng translations per id
         let engText;
