@@ -17,8 +17,14 @@ document.addEventListener("DOMContentLoaded", () => {
         const data = await response.json();
         if (response.ok) {
             console.log("User created:", data);
+            alertMessage.style.display = 'block';
+            alertMessage.style.color = '#299CF9';
+            alertMessage.innerHTML = `Welcome ${username}! You may now log in.`;
         } else {
             console.error("Error:", data);
+            alertMessage.style.display = 'block';
+            alertMessage.style.color = 'red';
+            alertMessage.innerHTML = "Oh no! There has been an error. Please try again in a few minutes.";
         }
     });
 
@@ -38,9 +44,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const data = await response.json();
         if (response.ok) {
-            alert("Hello!");
+            alertMessage.style.display = 'block';
+            alertMessage.style.color = '#299CF9';
+            alertMessage.innerHTML = `Welcome ${username}! You may now log in.`;
         } else {
-            console.error("Login failed:", data);
+            console.error("Error:", data);
+            alertMessage.style.display = 'block';
+            alertMessage.style.color = 'red';
+            alertMessage.innerHTML = "Oh no! There has been an error. Please try again in a few minutes.";
         }
     });
 });
