@@ -143,7 +143,7 @@ section #Login .log-container #alert-p,
 section #Login .signup-container #alert-p,
 section #Signup .log-container #alert-p,
 section #Signup .signup-container #alert-p {
-  color: red;
+  display: none;
 }
 
 footer {
