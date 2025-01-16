@@ -2,7 +2,7 @@ import express from 'express';
 import User from '../models/userModel.js';
 const router = express.Router();
 
-router.post('/', async(requestAnimationFrame, res)=>{
+router.post('/', async(req, res)=>{
     const{email, username, password} = req.body;
     try {
         const newUser = new User({email, username, password});
