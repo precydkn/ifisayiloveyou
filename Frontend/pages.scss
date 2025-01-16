@@ -4,7 +4,8 @@ $nav-header-font: 'Kirang Haerang';
 $text-font: 'Dongle';
 $span-font: 'Kosugi Maru';
 $quote-font: 'Noto Sans Mono';
-$nav-header-size: 50px;
+$nav-header-size-desk: 50px;
+$nav-header-size-tab: 30px;
 $blue-album: #299CF9;
 $blue1: #477AAE;
 $blue2: #8AB9CD;
@@ -25,11 +26,12 @@ html::-webkit-scrollbar {
 body {
     margin: 0;
     font-family: $text-font;
-    background-color: $blue-album;
+    background-color: $blue-player;
+    overflow-x: hidden;
 
     h1 {
         font-family: $nav-header-font;
-        font-size: $nav-header-size;
+        font-size: $nav-header-size-desk;
         font-weight: normal;
         color: $blue3;
         text-align: center;
@@ -40,11 +42,13 @@ body {
 
 header {
     nav {
-        background-color: black;
         font-family: $nav-header-font;
         display: flex;
         align-items: center;
-        width: 100%;
+        position: fixed;
+        top: 0;
+        z-index: 10;
+        width: 100vw;
         padding-right: 20px;
         box-sizing: border-box; /* ensures padding doesn’t affect width calculation */
         backdrop-filter: blur(10px);
@@ -60,19 +64,14 @@ header {
         
         .nav-btns {
             margin-left: auto;
-            width: 1000px;
-            display: flex;
-            justify-content: space-between;
+            width: auto;
+            padding-right: 20px;
             
             a {
+                font-size: $nav-header-size-tab;
                 text-decoration: none;
-                font-size: $nav-header-size;
                 color: white;
-                -webkit-text-stroke-width: 1.7px;
                 -webkit-text-stroke-color: black;
-            }
-            #current, a:hover {
-                color: $blue3;
                 -webkit-text-stroke-width: 1px;
             }
         }
@@ -81,8 +80,12 @@ header {
 
 section {
     font-size: 30px;
-    padding: 50px;
+    background-image: linear-gradient($blue-player 5%, $blue-album 95%);
+    margin-top: 100px;
 
+    h1 {
+        margin-bottom: 0;
+    }
     p {
         line-height: 1;
     }
@@ -95,16 +98,15 @@ section {
         .log-container,
         .signup-container {
             background-color: white;
-            padding: 30px 70px;
             width: 800px;
             text-align: center;
             border-radius: 50px;
         
             input {
-                border: 1 solid #646464;
+                border: 1px solid #646464;
                 border-radius: 10px;
                 background-color: rgba(255,255,255,0);
-                font-size: 16px;
+                font-size: 30px;
                 font-family: $text-font;
                 width: 80%;
                 height: 50px;
@@ -126,7 +128,7 @@ section {
             
             button {
                 font-family: $text-font;
-                font-size: medium;
+                font-size: 30px;
                 padding: 10px 20px;
                 background-color: $blue1;
                 color: white;
@@ -136,22 +138,6 @@ section {
                 background-color: $blue2;
                 transition: 0.3s;
                 cursor: pointer;
-            }
-            
-            /*contact file*/
-            .name {
-                display: flex;
-                gap: 20px;
-            }
-            textarea {
-                width: 98%;
-                resize: vertical;
-                padding: 10px;
-                margin-top: 10px;
-                font-family: "Playfair Display", serif;
-            }
-            .send {
-                margin-top: 20px;
             }
         }
     }
@@ -191,7 +177,7 @@ footer {
     }
 
     .ribbon {
-        background-image: url("../img/footer ribbon.png");
+        background-image: url("img/footer ribbon.png");
         height: 150px;
         background-repeat: repeat-x;
         background-position: center;
@@ -214,37 +200,25 @@ footer {
 /*==========MEDIA QUERIES==========*/
 /*Mobile*/
 @media only screen and (max-width: 480px) {
-    /*==========HEADER==========*/
-    header {
-        nav {
-            display: block;
-            backdrop-filter: none;
-            border: none;
 
-            .nav-toggle-container {
-                position: absolute;
-                top: 5px;
-                right: 5px;
+    section {
+        padding: 10px;
 
-                #nav-toggle {
-                    font-size: 40px;
-                    background: none;
-                    border: none;
-                    color: white;
-                }
-            }
+        .log-container,
+        .signup-container {
+            border-radius: 30px;
+            padding: 10px;
             
-            .nav-btns {
-                display: none;
-                text-align: right;
-                padding-right: 20px;
-                a {
-                    display: block;
-                    font-size: $nav-header-size-desk;
-                    -webkit-text-stroke-width: 1.7px;
-                }
+            input,
+            button {
+                font-size: 20px;
+            }
+
+            p {
+                margin: 0;
             }
         }
+
     }
 
     /*==========FOOTER==========*/
@@ -254,6 +228,10 @@ footer {
         h1 {
             font-size: 40px;
             -webkit-text-stroke-width: 1px;
+        }
+
+        p {
+            font-size: 24px;
         }
 
         .copyright {
@@ -274,12 +252,28 @@ footer {
             }
 
             .nav-btns {
-                width: 600px;
+                margin-left: auto;
+                width: auto;
 
                 a {
                     font-size: $nav-header-size-tab;   
-                    -webkit-text-stroke-width: 1px;                 
+                    -webkit-text-stroke-width: 1px;
                 }
+            }
+        }
+    }
+
+    section {
+        padding: 30px;
+
+        .log-container,
+        .signup-container {
+            border-radius: 30px;
+            padding: 20px;
+
+            input,
+            button {
+                font-size: 24px;
             }
         }
     }
@@ -308,18 +302,36 @@ footer {
     /*==========HEADER==========*/
     header {
         nav {
-            .nav-toggle-container {
-                display: none;
-            }        
             .nav-btns {
-                width: 70vw;
-                padding-right: 20px;
+                margin-left: auto;
+                width: auto;
+                //width: 70vw;
+                display: flex;
+                justify-content: space-between;
                 
                 a {
+                    text-decoration: none;
                     font-size: $nav-header-size-desk;
+                    color: white;
                     -webkit-text-stroke-width: 1.7px;
+                    -webkit-text-stroke-color: black;
+                }
+
+                #current, a:hover {
+                    color: $blue3;
+                    -webkit-text-stroke-width: 1px;
                 }
             }
+        }
+    }
+
+    section {
+        padding: 50px;
+
+        .log-container,
+        .signup-container {
+            border-radius: 50px;
+            padding: 30px 70px;
         }
     }
 
