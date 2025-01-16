@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const email = document.getElementById("signup-email").value;
         const username = document.getElementById("signup-username").value;
         const password = document.getElementById("signup-password").value;
+        const alertMessage = document.getElementById("alert-p");
 
         const response = await fetch("http://localhost:4000/api/user", {
             method: "POST",
@@ -33,6 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
     loginBtn.addEventListener("click", async () => {
         const email = document.getElementById("login-email").value;
         const password = document.getElementById("login-password").value;
+        const alertMessage = document.getElementById("alert-p");
 
         const response = await fetch("http://localhost:4000/api/user/login", {
             method: "POST",
