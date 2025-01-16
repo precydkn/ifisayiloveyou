@@ -1,83 +1,65 @@
-//==========SIGN-UP==========
-document.getElementById('signup-btn').addEventListener('click', async () => {
-    const email = document.getElementById('signup-email').value.trim();
-    const username = document.getElementById('signup-username').value.trim();
-    const password = document.getElementById('signup-password').value.trim();
-    //const error = document.getElementById('signup-error');
+const API_BASE_URL = "http://localhost:4000"; // Replace with your actual backend URL
 
-    if (email && username && password) {
-        try {
-            const response = await fetch('http://localhost:4000/api/user/', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({email, username, password}),
-            });
+// Handle signup
+async function handleSignup() {
+    const email = document.getElementById("signup-email").value;
+    const username = document.getElementById("signup-username").value;
+    const password = document.getElementById("signup-password").value;
 
-            const data = await response.json();
+    try {
+        const response = await fetch(`${API_BASE_URL}/users`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ email, username, password }),
+        });
 
-            if (response.ok) {
-                alert('Sign Up Successful! Redirecting to Login page...');
-                document.getElementById('signup-name').value = '';
-                document.getElementById('signup-email').value = '';
-                document.getElementById('signup-password').value = '';
-                //error.style.display = 'none';
-                //document.getElementById('signup').classList.add('hidden');
-                //document.getElementById('login').classList.remove('hidden');
-            } else {
-                //error.textContent = data.message || 'Sign Up Failed!';
-                //error.style.display = 'block';
-                alert(data.message);
-            }
-        } catch (err) {
-            /*error.textContent = 'An error occurred. Please try again later.';
-            error.style.display = 'block';*/
-            alert(err.message);
+        const result = await response.json();
+        if (response.ok) {
+            alert("Signup successful!");
+            window.location.href = "login.html";
+        } else {
+            alert(result.message || "Signup failed!");
         }
-    } else {
-        /*error.textContent = 'All fields are required!';
-        error.style.display = 'block';*/
-        alert('All fields are required!');
+    } catch (error) {
+        console.error("Error during signup:", error);
+        alert("An error occurred while signing up.");
     }
-});
+}
 
-//==========LOGIN==========
-document.getElementById('login-btn').addEventListener('click', async () => {
-    const email = document.getElementById('login-email').value.trim();
-    const password = document.getElementById('login-password').value.trim();
-    //const error = document.getElementById('login-error');
+// Handle login
+async function handleLogin() {
+    const email = document.getElementById("login-email").value;
+    const password = document.getElementById("login-password").value;
 
-    if (email && password) {
-        try {
-            const response = await fetch('http://localhost:4000/api/user/login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({email, password}),
-            });
+    try {
+        const response = await fetch(`${API_BASE_URL}/users/login`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ email, password }),
+        });
 
-            const data = await response.json();
-
-            if (response.ok) {
-                alert(`Welcome back, ${data.user.name}!`);
-                error.style.display = 'none';
-                localStorage.setItem('user', JSON.stringify(data));
-
-                window.location.href = './index.html';
-            } else {
-                error.textContent = data.message || 'Invalid email or password.';
-                error.style.display = 'block';
-            }
-        } catch (err) {
-            //error.textContent = 'An error occurred. Please try again later.';
-            //error.style.display = 'block';
-            alert(err.message);
+        const result = await response.json();
+        if (response.ok) {
+            alert("Login successful!");
+            // Redirect or perform actions after login
+        } else {
+            alert(result.message || "Login failed!");
         }
-    } else {
-        //error.textContent = 'All fields are required!';
-        //error.style.display = 'block';
-        alert("All fields are required!")
+    } catch (error) {
+        console.error("Error during login:", error);
+        alert("An error occurred while logging in.");
     }
+}
+
+// Attach event listeners
+document.addEventListener("DOMContentLoaded", () => {
+    const signupButton = document.getElementById("signup-btn");
+    const loginButton = document.getElementById("login-button"); // Update if multiple buttons exist
+
+    if (signupButton) signupButton.addEventListener("click", handleSignup);
+    if (loginButton) loginButton.addEventListener("click", handleLogin);
 });
