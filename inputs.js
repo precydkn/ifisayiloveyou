@@ -1,65 +1,44 @@
-const API_BASE_URL = "http://localhost:4000"; // Replace with your actual backend URL
-
-// Handle signup
-async function handleSignup() {
+// For signup page
+const signupBtn = document.getElementById("signup-btn");
+signupBtn.addEventListener("click", async () => {
     const email = document.getElementById("signup-email").value;
     const username = document.getElementById("signup-username").value;
     const password = document.getElementById("signup-password").value;
+    
+    const response = await fetch("http://localhost:4000/api/user", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, username, password }),
+    });
 
-    try {
-        const response = await fetch(`${API_BASE_URL}/users`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ email, username, password }),
-        });
-
-        const result = await response.json();
-        if (response.ok) {
-            alert("Signup successful!");
-            window.location.href = "login.html";
-        } else {
-            alert(result.message || "Signup failed!");
-        }
-    } catch (error) {
-        console.error("Error during signup:", error);
-        alert("An error occurred while signing up.");
+    const data = await response.json();
+    if (response.ok) {
+        console.log("User created:", data);
+    } else {
+        console.error("Error:", data);
     }
-}
+});
 
-// Handle login
-async function handleLogin() {
+// For login page
+const loginBtn = document.querySelector("button");
+loginBtn.addEventListener("click", async () => {
     const email = document.getElementById("login-email").value;
     const password = document.getElementById("login-password").value;
 
-    try {
-        const response = await fetch(`${API_BASE_URL}/users/login`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ email, password }),
-        });
+    const response = await fetch("http://localhost:4000/api/user/login", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+    });
 
-        const result = await response.json();
-        if (response.ok) {
-            alert("Login successful!");
-            // Redirect or perform actions after login
-        } else {
-            alert(result.message || "Login failed!");
-        }
-    } catch (error) {
-        console.error("Error during login:", error);
-        alert("An error occurred while logging in.");
+    const data = await response.json();
+    if (response.ok) {
+        console.log("Login successful:", data);
+    } else {
+        console.error("Login failed:", data);
     }
-}
-
-// Attach event listeners
-document.addEventListener("DOMContentLoaded", () => {
-    const signupButton = document.getElementById("signup-btn");
-    const loginButton = document.getElementById("login-button"); // Update if multiple buttons exist
-
-    if (signupButton) signupButton.addEventListener("click", handleSignup);
-    if (loginButton) loginButton.addEventListener("click", handleLogin);
 });
