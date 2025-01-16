@@ -126,7 +126,7 @@ section #Signup .log-container button,
 section #Signup .signup-container button {
   font-family: "Dongle";
   font-size: 30px;
-  padding: 10px 20px;
+  padding: 0 20px;
   background-color: #477AAE;
   color: white;
   border: none;
@@ -188,7 +188,7 @@ footer .ribbon {
 /*Mobile*/
 @media only screen and (max-width: 480px) {
   section {
-    padding: 10px;
+    padding: 20px 10px;
   }
   section .log-container,
   section .signup-container {
