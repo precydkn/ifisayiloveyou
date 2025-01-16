@@ -6,7 +6,8 @@
     <title>Login</title>
 
     <link rel="icon" href="../Frontend/img/bnd house logo.png" type="image/x-icon"> <!--web icon-->
-    <link rel="stylesheet" href="../Frontend/pages.css">
+    <link rel="stylesheet" href="../Frontend/pages.css"> <!--login/signup css-->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"> <!--AOS css link-->
 </head>
 <body>
     <header>
@@ -20,7 +21,7 @@
 
     <section>
         <div id="Login">
-            <div class="log-container">
+            <div class="log-container" data-aos="fade-up">
                 <h1>Login</h1>
                 <p>Login or create an account to share your own thoughts on the song!</p>
                 <input id="login-email" type="text" placeholder="Email Address"><br>
@@ -70,7 +71,6 @@
 
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> <!--AOS library-->
-    <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script> <!--TypeIt Library-->
     <script src="../Frontend/pages.js"></script> <!--js script-->
     <script src="../Frontend/inputs.js"></script> <!--js script for getting sign-up/login data-->
 </body>
