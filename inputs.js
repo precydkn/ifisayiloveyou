@@ -4,7 +4,10 @@ signupBtn.addEventListener("click", async () => {
     const email = document.getElementById("signup-email").value;
     const username = document.getElementById("signup-username").value;
     const password = document.getElementById("signup-password").value;
-    
+
+    // Log the data to confirm it's being captured correctly
+    console.log("Signup Data:", { email, username, password });
+
     const response = await fetch("http://localhost:4000/api/user", {
         method: "POST",
         headers: {
@@ -22,10 +25,13 @@ signupBtn.addEventListener("click", async () => {
 });
 
 // For login page
-const loginBtn = document.querySelector("button");
+const loginBtn = document.getElementById("login-btn");  // Make sure you're targeting the correct button
 loginBtn.addEventListener("click", async () => {
     const email = document.getElementById("login-email").value;
     const password = document.getElementById("login-password").value;
+
+    // Log the data to confirm it's being captured correctly
+    console.log("Login Data:", { email, password });
 
     const response = await fetch("http://localhost:4000/api/user/login", {
         method: "POST",
