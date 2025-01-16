@@ -1,8 +1,6 @@
-/*==========FONTS==========*/
-@import url('https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Dongle&family=Kirang+Haerang&family=Kosugi+Maru&family=Noto+Sans+Mono:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dongle&family=Kirang+Haerang&family=Kosugi+Maru&family=Noto+Sans+Mono:wght@100..900&display=swap'); /*fonts*/
 
 $nav-header-font: 'Kirang Haerang';
-$nav-current-font: 'Black And White Picture';
 $text-font: 'Dongle';
 $span-font: 'Kosugi Maru';
 $quote-font: 'Noto Sans Mono';
@@ -28,7 +26,7 @@ body {
     margin: 0;
     font-family: $text-font;
     background-color: $blue-album;
-    //transition: background-color 0.5s ease; // Smooth transition for background color
+
     h1 {
         font-family: $nav-header-font;
         font-size: $nav-header-size;
@@ -52,12 +50,9 @@ header {
         backdrop-filter: blur(10px);
         border-radius: 0 0 10px 10px;
         border: 2px solid rgba(0,0,0,0.5);
-
-        //border: 1px dashed white; /*remove after*/
         
         .bnd-logo {
             margin-right: auto;
-            //border: 1px dashed black; /*remove after*/
             img {
                 height: 100px;
             }
@@ -68,7 +63,7 @@ header {
             width: 1000px;
             display: flex;
             justify-content: space-between;
-            //border: 1px dashed black; /*remove after*/
+            
             a {
                 text-decoration: none;
                 font-size: $nav-header-size;
@@ -77,7 +72,6 @@ header {
                 -webkit-text-stroke-color: black;
             }
             #current, a:hover {
-                font-family: $nav-current-font;
                 color: $blue3;
                 -webkit-text-stroke-width: 1px;
             }
@@ -93,11 +87,13 @@ section {
         line-height: 1;
     }
 
-    #Login {
+    #Login,
+    #Signup {
         display: flex;
         justify-content: center;
         
-        .log-container {
+        .log-container,
+        .signup-container {
             background-color: white;
             padding: 30px 70px;
             width: 800px;
@@ -156,6 +152,196 @@ section {
             }
             .send {
                 margin-top: 20px;
+            }
+        }
+    }
+}
+
+footer {
+    background-color: $blue-album;
+    font-size: 30px;
+
+    a {
+        text-decoration: none;
+        color: $blue3;
+    }
+    
+    .container {
+        padding: 30px;
+
+        h1 {
+            margin-bottom: 0px;
+        }
+        p {
+            margin: 0;
+        }
+        
+        .footer-flex {
+            width: 100%;
+        }
+
+    }
+    
+    hr {
+        width: 90%;
+    }
+
+    .copyright {
+        text-align: center;
+    }
+
+    .ribbon {
+        background-image: url("../img/footer ribbon.png");
+        height: 150px;
+        background-repeat: repeat-x;
+        background-position: center;
+        background-size: contain;
+        animation: marquee 30s infinite linear;
+    }
+    
+    /*footer ribbon animation*/
+    @keyframes marquee {
+        0% {
+            background-position: 0;
+        }
+    
+        100% {
+            background-position: -1190px;
+        }
+    }
+}
+
+/*==========MEDIA QUERIES==========*/
+/*Mobile*/
+@media only screen and (max-width: 480px) {
+    /*==========HEADER==========*/
+    header {
+        nav {
+            display: block;
+            backdrop-filter: none;
+            border: none;
+
+            .nav-toggle-container {
+                position: absolute;
+                top: 5px;
+                right: 5px;
+
+                #nav-toggle {
+                    font-size: 40px;
+                    background: none;
+                    border: none;
+                    color: white;
+                }
+            }
+            
+            .nav-btns {
+                display: none;
+                text-align: right;
+                padding-right: 20px;
+                a {
+                    display: block;
+                    font-size: $nav-header-size-desk;
+                    -webkit-text-stroke-width: 1.7px;
+                }
+            }
+        }
+    }
+
+    /*==========FOOTER==========*/
+    footer {
+        text-align: center;
+        
+        h1 {
+            font-size: 40px;
+            -webkit-text-stroke-width: 1px;
+        }
+
+        .copyright {
+            margin: 0;
+        }
+    }
+}
+
+/*Tablet*/
+@media only screen and (min-width: 481px) and (max-width: 1024px) {
+    /*==========HEADER==========*/
+    header {
+        nav {
+            padding-right: 20px;
+
+            .nav-toggle-container {
+                display: none;
+            }
+
+            .nav-btns {
+                width: 600px;
+
+                a {
+                    font-size: $nav-header-size-tab;   
+                    -webkit-text-stroke-width: 1px;                 
+                }
+            }
+        }
+    }
+
+    /*==========FOOTER==========*/
+    footer {
+        h1,
+        p,
+        .socials {
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 36px;
+            -webkit-text-stroke-width: 1px;
+        }
+
+        p {
+            font-size: 24px;
+        }
+    }
+}
+
+/*Desktop | 1024px+*/
+@media only screen and (min-width: 1025px) {
+    /*==========HEADER==========*/
+    header {
+        nav {
+            .nav-toggle-container {
+                display: none;
+            }        
+            .nav-btns {
+                width: 70vw;
+                padding-right: 20px;
+                
+                a {
+                    font-size: $nav-header-size-desk;
+                    -webkit-text-stroke-width: 1.7px;
+                }
+            }
+        }
+    }
+
+    /*==========FOOTER==========*/
+    footer {
+        .container {
+            padding: 50px;
+
+            h1 {
+                text-align: left;
+                font-size: 40px;
+                margin: 10px;
+            }
+            
+            .footer-flex {
+                display: flex;
+                gap: 50px;
+                justify-content: center;
+
+                div {
+                    width: 100%;
+                }
             }
         }
     }
