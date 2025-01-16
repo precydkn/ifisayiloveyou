@@ -27,7 +27,7 @@ body h1 {
   -webkit-text-stroke-color: black;
 }
 
-/*COMMON STYLING*/
+/*==========COMMON STYLING==========*/
 header video {
   position: absolute;
   -o-object-fit: cover;
@@ -49,7 +49,6 @@ header nav {
 }
 header nav .bnd-logo {
   margin-right: auto;
-  pointer-events: none; /*make it unclickable*/
 }
 header nav .bnd-logo img {
   height: 100px;
@@ -241,6 +240,54 @@ section #Analysis .fade-in.visible {
   transform: translateX(0);
 }
 
+footer {
+  background-color: #299CF9;
+  font-size: 30px;
+  /*footer ribbon animation*/
+}
+footer a {
+  text-decoration: none;
+  color: #D3E0F8;
+}
+footer .footer-desk {
+  display: none;
+}
+footer .footer-others hr {
+  margin-top: 30px;
+}
+footer .container {
+  padding: 30px 0 0;
+  margin: 0;
+}
+footer .container .footer-flex {
+  /*display: grid;
+  grid-template-columns: auto auto auto;*/
+  gap: 100px;
+  justify-content: right;
+  width: 100%;
+}
+footer .container .footer-flex .socials-copyright {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+footer .ribbon {
+  background-image: url("img/footer ribbon.png");
+  height: 150px;
+  background-repeat: repeat-x;
+  background-position: center;
+  background-size: contain;
+  animation: marquee 30s infinite linear;
+}
+@keyframes marquee {
+  0% {
+    background-position: 0;
+  }
+  100% {
+    background-position: -1190px;
+  }
+}
+
 /*==========MEDIA QUERIES==========*/
 /*Mobile*/
 @media only screen and (max-width: 768px) {
@@ -335,6 +382,25 @@ section #Analysis .fade-in.visible {
     padding: 10px;
     font-size: 4vw;
   }
+  footer {
+    text-align: center;
+  }
+  footer h1 {
+    font-size: 50px;
+    -webkit-text-stroke-width: 1px;
+  }
+  footer .footer-others h1,
+  footer .footer-others p {
+    margin: 5px;
+    text-align: left;
+  }
+  footer .footer-others .socials {
+    text-align: left;
+  }
+  footer .footer-others .footer-bnd-logo img {
+    width: auto;
+    height: 200px;
+  }
 }
 /*Tablet*/
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
@@ -397,6 +463,17 @@ section #Analysis .fade-in.visible {
   }
   section #Analysis .horizontal-scroll-container .hs-slide p {
     padding: auto 0;
+  }
+  footer {
+    text-align: center;
+  }
+  footer .footer-others h1,
+  footer .footer-others p {
+    margin: 5px;
+  }
+  footer .footer-others .footer-bnd-logo img {
+    width: auto;
+    height: 200px;
   }
 }
 /*Desktop | 1024px+*/
@@ -491,6 +568,12 @@ section #Analysis .fade-in.visible {
     background-color: #299CF9;
     font-size: 30px;
   }
+  footer .footer-others {
+    display: none;
+  }
+  footer .footer-desk {
+    display: flex;
+  }
   footer .container {
     padding: 30px 0 0;
     margin: 0;
@@ -519,22 +602,6 @@ section #Analysis .fade-in.visible {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-  }
-  footer .ribbon {
-    background-image: url("img/footer ribbon.png");
-    height: 150px;
-    background-repeat: repeat-x;
-    background-position: center;
-    background-size: contain;
-    animation: marquee 30s infinite linear;
-  }
-  /*footer ribbon animation*/
-  @keyframes marquee {
-    0% {
-      background-position: 0;
-    }
-    100% {
-      background-position: -1190px;
-    }
+    text-align: center;
   }
 }/*# sourceMappingURL=style.css.map */
