@@ -1,6 +1,5 @@
 @charset "UTF-8";
-/*==========FONTS==========*/
-@import url("https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Dongle&family=Kirang+Haerang&family=Kosugi+Maru&family=Noto+Sans+Mono:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dongle&family=Kirang+Haerang&family=Kosugi+Maru&family=Noto+Sans+Mono:wght@100..900&display=swap"); /*fonts*/
 /*page scrollbar format*/
 html {
   scroll-behavior: smooth; /*smooth scroll movement when clicking anchors*/
@@ -15,7 +14,8 @@ html::-webkit-scrollbar {
 body {
   margin: 0;
   font-family: "Dongle";
-  background-color: #299CF9;
+  background-color: #005395;
+  overflow-x: hidden;
 }
 body h1 {
   font-family: "Kirang Haerang";
@@ -28,11 +28,13 @@ body h1 {
 }
 
 header nav {
-  background-color: black;
   font-family: "Kirang Haerang";
   display: flex;
   align-items: center;
-  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  width: 100vw;
   padding-right: 20px;
   box-sizing: border-box; /* ensures padding doesn’t affect width calculation */
   -webkit-backdrop-filter: blur(10px);
@@ -48,26 +50,24 @@ header nav .bnd-logo img {
 }
 header nav .nav-btns {
   margin-left: auto;
-  width: 1000px;
-  display: flex;
-  justify-content: space-between;
+  width: auto;
+  padding-right: 20px;
 }
 header nav .nav-btns a {
+  font-size: 30px;
   text-decoration: none;
-  font-size: 50px;
   color: white;
-  -webkit-text-stroke-width: 1.7px;
   -webkit-text-stroke-color: black;
-}
-header nav .nav-btns #current, header nav .nav-btns a:hover {
-  font-family: "Black And White Picture";
-  color: #D3E0F8;
   -webkit-text-stroke-width: 1px;
 }
 
 section {
   font-size: 30px;
-  padding: 50px;
+  background-image: linear-gradient(#005395 5%, #299CF9 95%);
+  margin-top: 100px;
+}
+section h1 {
+  margin-bottom: 0;
 }
 section p {
   line-height: 1;
@@ -82,20 +82,18 @@ section #Login .signup-container,
 section #Signup .log-container,
 section #Signup .signup-container {
   background-color: white;
-  padding: 30px 70px;
   width: 800px;
   text-align: center;
   border-radius: 50px;
-  /*contact file*/
 }
 section #Login .log-container input,
 section #Login .signup-container input,
 section #Signup .log-container input,
 section #Signup .signup-container input {
-  border: 1 solid #646464;
+  border: 1px solid #646464;
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0);
-  font-size: 16px;
+  font-size: 30px;
   font-family: "Dongle";
   width: 80%;
   height: 50px;
@@ -127,7 +125,7 @@ section #Login .signup-container button,
 section #Signup .log-container button,
 section #Signup .signup-container button {
   font-family: "Dongle";
-  font-size: medium;
+  font-size: 30px;
   padding: 10px 20px;
   background-color: #477AAE;
   color: white;
@@ -140,29 +138,6 @@ section #Signup .signup-container button:hover {
   background-color: #8AB9CD;
   transition: 0.3s;
   cursor: pointer;
-}
-section #Login .log-container .name,
-section #Login .signup-container .name,
-section #Signup .log-container .name,
-section #Signup .signup-container .name {
-  display: flex;
-  gap: 20px;
-}
-section #Login .log-container textarea,
-section #Login .signup-container textarea,
-section #Signup .log-container textarea,
-section #Signup .signup-container textarea {
-  width: 98%;
-  resize: vertical;
-  padding: 10px;
-  margin-top: 10px;
-  font-family: "Playfair Display", serif;
-}
-section #Login .log-container .send,
-section #Login .signup-container .send,
-section #Signup .log-container .send,
-section #Signup .signup-container .send {
-  margin-top: 20px;
 }
 
 footer {
@@ -206,5 +181,133 @@ footer .ribbon {
   }
   100% {
     background-position: -1190px;
+  }
+}
+
+/*==========MEDIA QUERIES==========*/
+/*Mobile*/
+@media only screen and (max-width: 480px) {
+  section {
+    padding: 10px;
+  }
+  section .log-container,
+  section .signup-container {
+    border-radius: 30px;
+    padding: 10px;
+  }
+  section .log-container input,
+  section .log-container button,
+  section .signup-container input,
+  section .signup-container button {
+    font-size: 20px;
+  }
+  section .log-container p,
+  section .signup-container p {
+    margin: 0;
+  }
+  /*==========FOOTER==========*/
+  footer {
+    text-align: center;
+  }
+  footer h1 {
+    font-size: 40px;
+    -webkit-text-stroke-width: 1px;
+  }
+  footer p {
+    font-size: 24px;
+  }
+  footer .copyright {
+    margin: 0;
+  }
+}
+/*Tablet*/
+@media only screen and (min-width: 481px) and (max-width: 1024px) {
+  /*==========HEADER==========*/
+  header nav {
+    padding-right: 20px;
+  }
+  header nav .nav-toggle-container {
+    display: none;
+  }
+  header nav .nav-btns {
+    margin-left: auto;
+    width: auto;
+  }
+  header nav .nav-btns a {
+    font-size: 30px;
+    -webkit-text-stroke-width: 1px;
+  }
+  section {
+    padding: 30px;
+  }
+  section .log-container,
+  section .signup-container {
+    border-radius: 30px;
+    padding: 20px;
+  }
+  section .log-container input,
+  section .log-container button,
+  section .signup-container input,
+  section .signup-container button {
+    font-size: 24px;
+  }
+  /*==========FOOTER==========*/
+  footer h1,
+  footer p,
+  footer .socials {
+    text-align: center;
+  }
+  footer h1 {
+    font-size: 36px;
+    -webkit-text-stroke-width: 1px;
+  }
+  footer p {
+    font-size: 24px;
+  }
+}
+/*Desktop | 1024px+*/
+@media only screen and (min-width: 1025px) {
+  /*==========HEADER==========*/
+  header nav .nav-btns {
+    margin-left: auto;
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+  }
+  header nav .nav-btns a {
+    text-decoration: none;
+    font-size: 50px;
+    color: white;
+    -webkit-text-stroke-width: 1.7px;
+    -webkit-text-stroke-color: black;
+  }
+  header nav .nav-btns #current, header nav .nav-btns a:hover {
+    color: #D3E0F8;
+    -webkit-text-stroke-width: 1px;
+  }
+  section {
+    padding: 50px;
+  }
+  section .log-container,
+  section .signup-container {
+    border-radius: 50px;
+    padding: 30px 70px;
+  }
+  /*==========FOOTER==========*/
+  footer .container {
+    padding: 50px;
+  }
+  footer .container h1 {
+    text-align: left;
+    font-size: 40px;
+    margin: 10px;
+  }
+  footer .container .footer-flex {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+  }
+  footer .container .footer-flex div {
+    width: 100%;
   }
 }/*# sourceMappingURL=pages.css.map */
