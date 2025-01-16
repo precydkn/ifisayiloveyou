@@ -87,6 +87,7 @@ header {
 
 section {
     font-size: 30px;
+
     p {
         line-height: 1;
     }
@@ -118,6 +119,19 @@ section {
         .lyrics-container {
             background-color: $blue1;
             border-radius: 20px;
+
+            .note {
+                position: absolute;
+                top: 150px;
+                color: $blue2;
+
+                .note-desk {
+                    display: none;
+                }
+                .note-others {
+                    display: inline;
+                }
+            }
 
             .full-lyrics {
                 font-family: $text-font;
@@ -177,6 +191,7 @@ section {
                     height: 40vw;
                     object-fit: cover;
                     border-radius: 30px;
+                    z-index: -10; /*ensure it won't get clicked on mobile*/
                 }
         
                 p {
@@ -239,6 +254,7 @@ section {
                     height: 40vw;
                     object-fit: cover;
                     border-radius: 30px;
+                    z-index: -10; /*ensure it won't get clicked on mobile*/
                 }
                 p {
                     position: relative;
@@ -385,6 +401,10 @@ footer {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+
+                .note {
+                    top: 100px;
+                }
                 
                 .full-lyrics {
                     font-size: 24px;
@@ -452,6 +472,10 @@ footer {
             -webkit-text-stroke-width: 1px;
         }
 
+        p {
+            font-size: 24px;
+        }
+        
         .copyright {
             margin: 0;
         }
@@ -566,12 +590,14 @@ footer {
     /*==========HEADER==========*/
     header {
         height: 100vh;
+        
         video {
             position: absolute; /*put the nav on top of vid*/
             width: 100%;
             height: 100%;
             object-fit: cover; /*so when not in full screen, video is cut*/
         }
+
         nav {
             .nav-toggle-container {
                 display: none;
@@ -597,7 +623,6 @@ footer {
         flex-direction: column;
     }
     section {
-
         /*=====ABOUT DIV=====*/
         #About {
             .song {
@@ -621,6 +646,16 @@ footer {
                 margin: 0 50px 80px;
                 display: flex;
                 justify-content: space-evenly;
+
+                .note {
+                    .note-desk {
+                        display: inline;
+                    }
+    
+                    .note-others {
+                        display: none;
+                    }
+                }
                 
                 .full-lyrics {
                     font-size: 40px;
