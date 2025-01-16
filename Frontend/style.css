@@ -98,7 +98,7 @@ section #Lyrics .lyrics-container {
 }
 section #Lyrics .lyrics-container .note {
   position: absolute;
-  top: 0px;
+  top: 150px;
   color: #8AB9CD;
 }
 section #Lyrics .lyrics-container .note .note-desk {
