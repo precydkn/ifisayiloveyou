@@ -72,11 +72,15 @@ section {
 section p {
   line-height: 1;
 }
-section #Login {
+section #Login,
+section #Signup {
   display: flex;
   justify-content: center;
 }
-section #Login .log-container {
+section #Login .log-container,
+section #Login .signup-container,
+section #Signup .log-container,
+section #Signup .signup-container {
   background-color: white;
   padding: 30px 70px;
   width: 800px;
@@ -84,7 +88,10 @@ section #Login .log-container {
   border-radius: 50px;
   /*contact file*/
 }
-section #Login .log-container input {
+section #Login .log-container input,
+section #Login .signup-container input,
+section #Signup .log-container input,
+section #Signup .signup-container input {
   border: 1 solid #646464;
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0);
@@ -95,18 +102,30 @@ section #Login .log-container input {
   padding: 0 10px;
   margin: 10px 0;
 }
-section #Login .log-container input:focus {
+section #Login .log-container input:focus,
+section #Login .signup-container input:focus,
+section #Signup .log-container input:focus,
+section #Signup .signup-container input:focus {
   outline: none;
 }
-section #Login .log-container a {
+section #Login .log-container a,
+section #Login .signup-container a,
+section #Signup .log-container a,
+section #Signup .signup-container a {
   color: #8AB9CD;
   text-decoration: none;
 }
-section #Login .log-container a:hover {
+section #Login .log-container a:hover,
+section #Login .signup-container a:hover,
+section #Signup .log-container a:hover,
+section #Signup .signup-container a:hover {
   color: #C8BDB7;
   transition: 0.2s;
 }
-section #Login .log-container button {
+section #Login .log-container button,
+section #Login .signup-container button,
+section #Signup .log-container button,
+section #Signup .signup-container button {
   font-family: "Dongle";
   font-size: medium;
   padding: 10px 20px;
@@ -114,22 +133,78 @@ section #Login .log-container button {
   color: white;
   border: none;
 }
-section #Login .log-container button:hover {
+section #Login .log-container button:hover,
+section #Login .signup-container button:hover,
+section #Signup .log-container button:hover,
+section #Signup .signup-container button:hover {
   background-color: #8AB9CD;
   transition: 0.3s;
   cursor: pointer;
 }
-section #Login .log-container .name {
+section #Login .log-container .name,
+section #Login .signup-container .name,
+section #Signup .log-container .name,
+section #Signup .signup-container .name {
   display: flex;
   gap: 20px;
 }
-section #Login .log-container textarea {
+section #Login .log-container textarea,
+section #Login .signup-container textarea,
+section #Signup .log-container textarea,
+section #Signup .signup-container textarea {
   width: 98%;
   resize: vertical;
   padding: 10px;
   margin-top: 10px;
   font-family: "Playfair Display", serif;
 }
-section #Login .log-container .send {
+section #Login .log-container .send,
+section #Login .signup-container .send,
+section #Signup .log-container .send,
+section #Signup .signup-container .send {
   margin-top: 20px;
+}
+
+footer {
+  background-color: #299CF9;
+  font-size: 30px;
+  /*footer ribbon animation*/
+}
+footer a {
+  text-decoration: none;
+  color: #D3E0F8;
+}
+footer .container {
+  padding: 30px;
+}
+footer .container h1 {
+  margin-bottom: 0px;
+}
+footer .container p {
+  margin: 0;
+}
+footer .container .footer-flex {
+  width: 100%;
+}
+footer hr {
+  width: 90%;
+}
+footer .copyright {
+  text-align: center;
+}
+footer .ribbon {
+  background-image: url("img/footer ribbon.png");
+  height: 150px;
+  background-repeat: repeat-x;
+  background-position: center;
+  background-size: contain;
+  animation: marquee 30s infinite linear;
+}
+@keyframes marquee {
+  0% {
+    background-position: 0;
+  }
+  100% {
+    background-position: -1190px;
+  }
 }/*# sourceMappingURL=pages.css.map */
