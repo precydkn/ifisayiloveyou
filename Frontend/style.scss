@@ -41,7 +41,7 @@ body {
     }
 }
 
-/*COMMON STYLING*/
+/*==========COMMON STYLING==========*/
 header {
     video {
         position: absolute;
@@ -62,7 +62,6 @@ header {
         
         .bnd-logo {
             margin-right: auto;
-            pointer-events: none; /*make it unclickable*/
 
             img {
                 height: 100px;
@@ -286,6 +285,68 @@ section {
     }
 }
 
+footer {
+    background-color: $blue-album;
+    font-size: 30px;
+
+    a {
+        text-decoration: none;
+        color: $blue3;
+    }
+
+    .footer-desk {
+        display: none;
+    }
+
+    .footer-others {
+        hr {
+            margin-top: 30px;
+        }
+    }
+    
+    .container {
+        padding: 30px 0 0;
+        margin: 0;
+        
+        .footer-flex {
+            /*display: grid;
+            grid-template-columns: auto auto auto;*/
+            gap: 100px;
+            justify-content: right;
+            width: 100%;
+
+            .socials-copyright {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+        }
+    }
+
+    .ribbon {
+        background-image: url("img/footer ribbon.png");
+        height: 150px;
+        background-repeat: repeat-x;
+        background-position: center;
+        background-size: contain;
+        animation: marquee 30s infinite linear;
+
+        //border: 1px dashed pink;
+    }
+    
+    /*footer ribbon animation*/
+    @keyframes marquee {
+        0% {
+            background-position: 0;
+        }
+    
+        100% {
+            background-position: -1190px;
+        }
+    }
+}
+
+
 
 /*==========MEDIA QUERIES==========*/
 /*Mobile*/
@@ -404,6 +465,34 @@ section {
             }
         }
     }
+
+    footer {
+        text-align: center;
+        
+        h1 {
+            font-size: 50px;
+            -webkit-text-stroke-width: 1px;
+        }
+
+        .footer-others {
+            h1,
+            p {
+                margin: 5px;
+                text-align: left;
+            }
+            
+            .socials {
+                text-align: left;
+            }
+
+            .footer-bnd-logo {
+                img {
+                    width: auto;
+                    height: 200px;
+                }
+            }
+        }
+    }
 }
 
 /*Tablet*/
@@ -484,6 +573,24 @@ section {
                     p {
                         padding: auto 0;
                     }
+                }
+            }
+        }
+    }
+    
+    footer {
+        text-align: center;
+        
+        .footer-others {
+            h1,
+            p {
+                margin: 5px;
+            }
+
+            .footer-bnd-logo {
+                img {
+                    width: auto;
+                    height: 200px;
                 }
             }
         }
@@ -612,6 +719,13 @@ section {
         font-size: 30px;
         //border: 1px solid #005395;
         
+        .footer-others {
+            display: none;
+        }
+        .footer-desk {
+            display: flex;
+        }
+
         .container {
             padding: 30px 0 0;
             margin: 0;
@@ -626,11 +740,9 @@ section {
                 gap: 100px;
                 justify-content: right;
                 width: 100%;
-                //border: 1px dashed white;
 
                 div {
                     width: 100%;
-                    //border: 1px dashed pink;
                 }
 
                 .footer-bnd-logo {
@@ -645,30 +757,9 @@ section {
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;
+                    text-align: center;
                 }
             }
-        }
-
-        .ribbon {
-            background-image: url("img/footer ribbon.png");
-            height: 150px;
-            background-repeat: repeat-x;
-            background-position: center;
-            background-size: contain;
-            animation: marquee 30s infinite linear;
-
-            //border: 1px dashed pink;
-        }
-    }
-
-    /*footer ribbon animation*/
-    @keyframes marquee {
-        0% {
-            background-position: 0;
-        }
-    
-        100% {
-            background-position: -1190px;
         }
     }
 }
