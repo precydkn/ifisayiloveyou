@@ -3,7 +3,7 @@
 AOS.init();
 AOS.init({
     once: true, //animations will only play once (when scrolled up, animation on load does not play anymore)
-    offset: 250 //so animation will trigger 250px from og trigger point
+    offset: 150, //so animation will trigger 150px from og trigger point
 });
 
 // using TypeIt Library (https://www.typeitjs.com/) for typewritter animations
