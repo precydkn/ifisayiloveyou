@@ -5,9 +5,6 @@ signupBtn.addEventListener("click", async () => {
     const username = document.getElementById("signup-username").value;
     const password = document.getElementById("signup-password").value;
 
-    // Log the data to confirm it's being captured correctly
-    console.log("Signup Data:", { email, username, password });
-
     const response = await fetch("http://localhost:4000/api/user", {
         method: "POST",
         headers: {
@@ -44,6 +41,7 @@ loginBtn.addEventListener("click", async () => {
     const data = await response.json();
     if (response.ok) {
         console.log("Login successful:", data);
+        alert("Hello!")
     } else {
         console.error("Login failed:", data);
     }
