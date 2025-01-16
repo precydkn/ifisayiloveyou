@@ -39,7 +39,7 @@ header nav {
   align-items: center;
   position: fixed;
   z-index: 10;
-  width: 100vw;
+  width: 100%;
   box-sizing: border-box;
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
@@ -98,7 +98,7 @@ section #Lyrics .lyrics-container {
 }
 section #Lyrics .lyrics-container .note {
   position: absolute;
-  top: 150px;
+  top: 0px;
   color: #8AB9CD;
 }
 section #Lyrics .lyrics-container .note .note-desk {
@@ -342,7 +342,7 @@ footer .ribbon {
     align-items: center;
   }
   section #Lyrics .lyrics-container .note {
-    top: 100px;
+    position: relative;
   }
   section #Lyrics .lyrics-container .full-lyrics {
     font-size: 24px;
