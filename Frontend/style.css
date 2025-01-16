@@ -39,7 +39,7 @@ header nav {
   align-items: center;
   position: fixed;
   z-index: 10;
-  width: 100%;
+  width: 100vw;
   box-sizing: border-box;
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
