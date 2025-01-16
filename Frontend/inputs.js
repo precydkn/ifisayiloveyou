@@ -1,9 +1,10 @@
-// For signup page
+//==========SIGN-IN==========
 const signupBtn = document.getElementById("signup-btn");
 signupBtn.addEventListener("click", async () => {
     const email = document.getElementById("signup-email").value;
     const username = document.getElementById("signup-username").value;
     const password = document.getElementById("signup-password").value;
+    const alertMessage = document.getElementById("alert-p");
 
     const response = await fetch("http://localhost:4000/api/user", {
         method: "POST",
@@ -16,19 +17,22 @@ signupBtn.addEventListener("click", async () => {
     const data = await response.json();
     if (response.ok) {
         console.log("User created:", data);
+        alertMessage.style.color = '#299CF9';
+        alertMessage.innerHTML = "Welcome! You may now log in.";
     } else {
         console.error("Error:", data);
+        alertMessage.style.color = 'red';
+        alertMessage.innerHTML = "Error:", data;
     }
 });
 
-// For login page
-const loginBtn = document.getElementById("login-btn");  // Make sure you're targeting the correct button
+//==========LOGIN==========
+const loginBtn = document.getElementById("login-btn"); //get login button
+const alertMessage = document.getElementById("alert-p"); //get p tag with #alert
+
 loginBtn.addEventListener("click", async () => {
     const email = document.getElementById("login-email").value;
     const password = document.getElementById("login-password").value;
-
-    // Log the data to confirm it's being captured correctly
-    console.log("Login Data:", { email, password });
 
     const response = await fetch("http://localhost:4000/api/user/login", {
         method: "POST",
@@ -41,8 +45,11 @@ loginBtn.addEventListener("click", async () => {
     const data = await response.json();
     if (response.ok) {
         console.log("Login successful:", data);
-        alert("Hello!")
+        alertMessage.style.color = '#299CF9';
+        alertMessage.innerHTML = "Welcome! You are now logged in.";
     } else {
         console.error("Login failed:", data);
+        alertMessage.style.color = 'red';
+        alertMessage.innerHTML = "Login failed:", data;
     }
 });
